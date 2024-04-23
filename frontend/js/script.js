@@ -35,7 +35,7 @@ $(function () {
         });
     }, {
         root: null,
-        threshold: 0.5,
+        threshold: 0.7,
     });
     sectionsFooter.forEach((section) => {
         observerFooter.observe(section);
