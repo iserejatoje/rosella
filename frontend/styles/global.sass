@@ -1,0 +1,318 @@
+@import "normalize.css"
+@import "config"
+@import "colors"
+@import "fonts"
+@import "mixins"
+@import "services"
+
+*,
+*:after,
+*:before
+  box-sizing: border-box
+
+body,
+html
+  height: 100%
+
+.button
+  &--service
+    padding: 18px 50px
+    display: inline-flex
+    border-radius: 90px
+    border: 1px solid $black
+    text-transform: uppercase
+    font-size: 14px
+    font-weight: 500
+    text-decoration: none
+    color: $black
+    transition: background 200ms ease-in-out, color 200ms ease-in-out
+
+.border-radius-10
+  border-radius: 10px
+  overflow: hidden
+
+body
+  background: $white
+  font-family: 'Geometria', sans-serif
+
+.breadcrumbs
+  line-height: 160%
+  font-size: 12px
+  margin-top: 45px
+  display: inline-flex
+  flex-wrap: wrap
+
+  &-current
+      text-transform: uppercase
+
+  &-divider
+    margin-left: 5px
+    margin-right: 5px
+
+  &-divider,
+  &-link
+    color: transparentize($black, .5)
+
+  &-link
+    text-decoration: none
+
+.burger
+  background: transparent
+  border: none
+  display: flex
+  flex-shrink: 0
+  flex-direction: column
+  width: 45px
+  gap: 8px
+  padding: 10px
+  cursor: pointer
+
+  &:hover
+    span:first-child
+      max-width: 15px
+
+    span:last-child
+      max-width: 100%
+
+  span
+    display: inline-block
+    height: 1px
+    max-width: 100%
+    width: 100%
+    background: $white
+    transition: max-width $time ease-in-out
+    flex-shrink: 0
+
+    &:last-child
+      max-width: 10px
+
+.logo
+  display: inline-block
+  transform: translateY(4px)
+
+  img
+    display: block
+
+.cart-icon
+  position: relative
+
+.cart-count
+  position: absolute
+  bottom: 2px
+  left: 0
+  right: 0
+  color: $black
+  font-size: 15px
+  line-height: 100%
+  text-align: center
+
+.header
+  background-color: $black
+  min-height: $min-header-height
+  padding-left: 50px
+  padding-right: 50px
+  display: flex
+  color: $white
+  gap: 70px
+  align-items: center
+  transition: min-height 300ms ease-in-out
+
+  &.small
+    min-height: 84px
+
+  &-contacts
+    display: flex
+    gap: 50px
+    align-items: center
+
+    svg
+      display: block
+
+    .right
+      display: flex
+      gap: 30px
+      align-items: center
+
+  .phone
+    color: inherit
+    font-size: 20px
+    font-weight: 500
+    text-decoration: none
+    line-height: 120%
+    transition: opacity 200ms ease-in-out
+
+    &:hover
+      opacity: .8
+
+  nav
+    max-width: 980px
+    width: 100%
+
+    ul
+      list-style: none
+      justify-content: space-between
+      display: flex
+      align-items: center
+      margin: 0
+      padding: 0
+
+    a
+      color: $white
+      text-decoration: none
+      font-size: 14px
+      line-height: 160%
+      text-transform: uppercase
+      display: inline-flex
+      padding: 15px
+      align-items: center
+      transition: opacity 200ms ease-in-out
+      gap: 7px
+
+      &:hover
+        opacity: .8
+
+  &--background
+    background-position: center
+    background-repeat: no-repeat
+
+  &--swimming
+    position: fixed
+    top: 0
+    right: 0
+    left: 0
+    z-index: 100
+
+    & + .rosella-page
+      padding-top: 100px
+
+.container
+  max-width: $container-width
+  width: 100%
+  margin-left: auto
+  margin-right: auto
+  padding-left: $container-padding
+  padding-right: $container-padding
+
+.rosella
+  display: flex
+  flex-direction: column
+  min-height: 100%
+
+  &-inner
+    flex: 1 0 auto
+
+.footer
+  flex: 0 0 auto
+  min-height: 1130px
+  background: $black url(../images/footer/background.jpg) no-repeat fixed center
+  color: $white
+  display: flex
+  flex-direction: column
+  margin-top: 100px
+
+  .footer-columns
+    display: flex
+    gap: 55px
+
+    a
+      color: inherit
+      line-height: 160%
+      font-size: 16px
+      text-decoration: none
+      transition: opacity 200ms ease-in-out, color 200ms ease-in-out
+
+      &.large
+        text-transform: uppercase
+
+    .column
+      display: flex
+      flex-direction: column
+
+      &:first-child
+        gap: 30px
+
+        a
+          &:hover
+            opacity: .8
+
+
+      &:not(:first-child)
+        a:not(.large)
+          color: transparentize($white, .5)
+
+          &:not(:last-child)
+            margin-bottom: 7px
+
+          &:hover
+            color: transparentize($white, .2)
+
+        .large
+          margin-bottom: 12px
+
+  &-bottom
+    min-height: 112px
+    display: flex
+    align-items: center
+    gap: 70px
+
+  &-menu
+    padding: 45px 0
+    flex: 1
+    border-top: 1px solid rgba(255, 255, 255, 0.2)
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2)
+
+  &-address
+    font-size: 14px
+    line-height: 160%
+
+  &-info
+    display: flex
+    gap: 30px
+    margin-left: auto
+    align-items: center
+
+    a
+      text-decoration: none
+      color: inherit
+
+  .phone
+    font-size: 20px
+    line-height: 160%
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2)
+
+  &-web
+    display: flex
+    gap: 20px
+
+    a
+      font-size: 14px
+
+  .pages
+    padding: 60px 0
+    display: flex
+    flex-direction: column
+    gap: 50px
+
+    .page
+      opacity: 0
+      transition: opacity 600ms ease-in-out
+
+      &-detail
+        a
+          color: $white
+          font-size: 14px
+          text-decoration: none
+          transition: opacity 200ms ease-in-out
+
+          &:hover
+            opacity: .7
+
+      &-title
+        margin-bottom: 6px
+        line-height: 160%
+
+      &-text
+        color: transparentize($white, .5)
+        line-height: 160%
+        margin-bottom: 6px
+        font-size: 14px

@@ -1,0 +1,21 @@
+{
+  "name": "rosella",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@fancyapps/ui": "^5.0.36",
+    "autoprefixer": "^10.4.19",
+    "imask": "^7.6.0",
+    "jquery": "^4.0.0-beta",
+    "postcss": "^8.4.38",
+    "sass": "^1.75.0",
+    "swiper": "^8.4.7",
+    "vite": "^4.5.3"
+  }
+}
