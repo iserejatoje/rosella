@@ -1,6 +1,11 @@
 $(function () {
     console.log('init')
 
+    $('.cart-icon').click(function () {
+        $(this).next().toggleClass('cart-open');
+        return false
+    })
+
     function initHeaderEvents() {
         $(window).scroll(function (e) {
             if ($(window).scrollTop() >= 90) {
