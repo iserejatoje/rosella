@@ -11,6 +11,15 @@ $(function () {
         return false
     })
 
+    $('.cart-amount .plus').click(function () {
+        $(this).parents('.cart-amount').find('.cart-input').get(0).value++
+    })
+
+    $('.cart-amount .minus').click(function () {
+        if ($(this).parents('.cart-amount').find('.cart-input').val() > 1)
+            $(this).parents('.cart-amount').find('.cart-input').get(0).value--
+    })
+
     function initHeaderEvents() {
         $(window).scroll(function (e) {
             if ($(window).scrollTop() >= 90) {
