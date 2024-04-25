@@ -15,6 +15,8 @@ html
   height: 100%
 
 .button
+  cursor: pointer
+
   &--service
     padding: 18px 50px
     display: inline-flex
@@ -26,6 +28,34 @@ html
     text-decoration: none
     color: $black
     transition: background 200ms ease-in-out, color 200ms ease-in-out
+
+  &--subtotal
+    padding: 15px 15px 15px 20px
+    border-radius: 90px
+    height: 49px
+    margin-top: 10px
+    border: 1px solid $black
+    text-transform: uppercase
+    font-size: 16px
+    font-weight: 500
+    width: 100%
+    display: flex
+    align-items: center
+    text-decoration: none
+    color: $white
+    background: $black
+    transition: background 200ms ease-in-out, color 200ms ease-in-out
+
+    &:hover
+      background: lighten($black, 20%)
+
+
+    .subtotal-amount
+      margin-left: auto
+      margin-right: 15px
+
+    span
+      color: $white
 
 .border-radius-10
   border-radius: 10px
@@ -43,7 +73,7 @@ body
   flex-wrap: wrap
 
   &-current
-      text-transform: uppercase
+    text-transform: uppercase
 
   &-divider
     margin-left: 5px
@@ -109,11 +139,19 @@ body
 
   .cart-item
     display: flex
+    border-top: 1px solid transparentize($black, .9)
+    align-items: center
+    padding-top: 10px
+    padding-bottom: 10px
+
+    &:last-child
+      border-bottom: 1px solid transparentize($black, .9)
 
   .cart-image
     margin-right: 15px
 
     img
+      display: block
       @extend .border-radius-10
 
   .cart-wrapper
@@ -122,12 +160,72 @@ body
   .cart-bottom
     padding: 10px 0
 
+  .cart-product
+    max-width: 150px
+    font-size: 12px
+    text-transform: uppercase
+    font-weight: 500
+    line-height: 140%
+
+  .cart-actions
+    margin-left: auto
+    text-align: right
+
+  .cart-price
+    font-size: 16px
+    font-weight: 500
+    line-height: 140%
+
+  .cart-remove
+    font-size: 12px
+    line-height: 140%
+    color: rgba(0, 0, 0, 0.4)
+    background: transparent
+    padding: 0
+    border: none
+    cursor: pointer
+    text-transform: uppercase
+
+  .cart-amount
+    display: flex
+    height: 25px
+    align-items: center
+    margin-left: 10px
+
+    input
+      width: 100%
+      max-width: 30px
+      font-size: 20px
+      text-align: center
+      border: none
+      padding: 0
+      outline: none
+
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button
+      appearance: none
+      margin: 0
+
+    input[type=number]
+      appearance: textfield
+
+    button
+      flex-shrink: 0
+      background: transparent
+      border: none
+      outline: none
+      padding: 0
+      width: 20px
+      height: 20px
+      display: grid
+      place-content: center
+      cursor: pointer
+
   .cart-top
     display: flex
     justify-content: space-between
     text-transform: uppercase
     padding-bottom: 18px
-    border-bottom: 1px solid transparentize($black, .9)
 
     span
       opacity: .5

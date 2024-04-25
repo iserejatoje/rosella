@@ -6,6 +6,11 @@ $(function () {
         return false
     })
 
+    $('.cart-remove').click(function () {
+        $(this).parents('.cart-item').remove();
+        return false
+    })
+
     function initHeaderEvents() {
         $(window).scroll(function (e) {
             if ($(window).scrollTop() >= 90) {
