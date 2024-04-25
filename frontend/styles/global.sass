@@ -225,6 +225,10 @@ blockquote
     a
       text-decoration: none
       color: $black
+      transition: color 200ms ease-in-out
+
+      &:hover
+        color: transparentize($black, .33)
 
   .cart-actions
     margin-left: auto
