@@ -4,6 +4,7 @@
 @import "fonts"
 @import "mixins"
 @import "services"
+@import "faq"
 
 *,
 *:after,
@@ -33,7 +34,7 @@ html
     padding: 15px 15px 15px 20px
     border-radius: 90px
     height: 49px
-    margin-top: 10px
+    margin-top: 25px
     border: 1px solid $black
     text-transform: uppercase
     font-size: 16px
@@ -46,8 +47,14 @@ html
     background: $black
     transition: background 200ms ease-in-out, color 200ms ease-in-out
 
+    svg
+      transition: transform 200ms ease-in-out
+
     &:hover
       background: lighten($black, 20%)
+
+      svg
+        transform: translateX(6px)
 
 
     .subtotal-amount
@@ -65,15 +72,27 @@ body
   background: $white
   font-family: 'Geometria', sans-serif
 
+.text-page
+  padding-top: 60px
+
+  ul
+    line-height: 160%
+    padding-left: 1em
+
 .breadcrumbs
   line-height: 160%
   font-size: 12px
-  margin-top: 45px
   display: inline-flex
   flex-wrap: wrap
 
+  &--long
+    margin-top: 45px
+
+  &--page
+    margin-top: 65px
+
   &-current
-    text-transform: uppercase
+    //text-transform: uppercase
 
   &-divider
     margin-left: 5px
@@ -81,7 +100,8 @@ body
 
   &-divider,
   &-link
-    color: transparentize($black, .5)
+    color: inherit
+    opacity: .5
 
   &-link
     text-decoration: none
@@ -123,7 +143,25 @@ body
   img
     display: block
 
+.page-title
+  font-size: 40px
+  line-height: 160%
+  text-transform: uppercase
+
+blockquote
+  opacity: .5
+  margin: 0
+  line-height: 160%
+  font-size: 16px
+  padding: 0
+
 .header
+  &--blur
+    background: rgba(0, 0, 0, 0.15)
+    backdrop-filter: blur(10px)
+
+  &--border
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3)
 
   .cart-icon
     position: relative
@@ -159,7 +197,7 @@ body
     position: relative
 
   .cart-bottom
-    padding: 10px 0
+    //
 
   .cart-product
     max-width: 150px
@@ -186,6 +224,10 @@ body
     border: none
     cursor: pointer
     text-transform: uppercase
+    transition: color 200ms ease-in-out
+
+    &:hover
+      color: rgba(0, 0, 0, 0.75)
 
   .cart-amount
     display: flex
@@ -233,7 +275,7 @@ body
     display: flex
     justify-content: space-between
     text-transform: uppercase
-    padding-bottom: 18px
+    margin-bottom: 25px
 
     span
       opacity: .5
@@ -248,6 +290,7 @@ body
   .cart-content
     opacity: 0
     visibility: hidden
+    min-height: 135px
     transition: transform 100ms ease-in-out, opacity 100ms ease-in-out, visibility 100ms ease-in-out
     padding: 35px
     background: $white
@@ -265,8 +308,13 @@ body
       visibility: visible
       transform: scale(1)
 
+
+.header-top
+  padding-top: 100px
+  padding-bottom: 10px
+  color: $white
+
 .header
-  background-color: $black
   min-height: $min-header-height
   padding-left: 50px
   padding-right: 50px
@@ -361,7 +409,6 @@ body
 
 .footer
   flex: 0 0 auto
-  min-height: 1130px
   background: $black url(../images/footer/background.jpg) no-repeat fixed center
   color: $white
   display: flex
@@ -437,25 +484,33 @@ body
     font-size: 20px
     line-height: 160%
     border-bottom: 1px solid rgba(255, 255, 255, 0.2)
+    transition: opacity 200ms ease-in-out
+
+    &:hover
+      opacity: .8
 
   &-web
     display: flex
     gap: 20px
 
     a
+      transition: opacity 200ms ease-in-out
       font-size: 14px
 
-  .pages
+      &:hover
+        opacity: .8
+
+  .seo-pages
     padding: 60px 0
     display: flex
     flex-direction: column
     gap: 50px
 
-    .page
+    .seo-page
       opacity: 0
       transition: opacity 600ms ease-in-out
 
-      &-detail
+      .detail
         a
           color: $white
           font-size: 14px
@@ -465,11 +520,11 @@ body
           &:hover
             opacity: .7
 
-      &-title
+      .title
         margin-bottom: 6px
         line-height: 160%
 
-      &-text
+      .text
         color: transparentize($white, .5)
         line-height: 160%
         margin-bottom: 6px
