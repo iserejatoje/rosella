@@ -6,8 +6,17 @@ $(function () {
         return false
     })
 
+    $(document).on('click', function (event) {
+        if (!$(event.target).closest('.cart-content').length) {
+            $('.cart-content').removeClass('cart-open');
+        }
+    });
+
     $('.cart-remove').click(function () {
-        $(this).parents('.cart-item').remove();
+        let $cart = $(this).parents('.cart-item');
+        $(this).parents('.cart-item').slideUp(300, function () {
+            $cart.remove();
+        })
         return false
     })
 

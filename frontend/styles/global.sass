@@ -124,6 +124,7 @@ body
     display: block
 
 .header
+
   .cart-icon
     position: relative
 
@@ -220,6 +221,13 @@ body
       display: grid
       place-content: center
       cursor: pointer
+
+      path
+        transition: fill-opacity 200ms ease-in-out
+
+      &:hover
+        path
+          fill-opacity: .8
 
   .cart-top
     display: flex
