@@ -9,7 +9,8 @@ export default defineConfig({
         outDir: '../docs',
         rollupOptions: {
             input: {
-                index: resolve(__dirname, 'index.html'),
+                services: resolve(__dirname, 'services.html'),
+                faq: resolve(__dirname, 'faq.html'),
             },
         },
         css: {
