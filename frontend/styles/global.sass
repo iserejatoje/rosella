@@ -74,9 +74,25 @@ body
 
 .text-page
   padding-top: 60px
+  line-height: 160%
+
+  .container
+    > *:first-child
+      margin-top: 0 !important
+
+  *:not(h2) + blockquote
+    margin-top: 60px
+
+  blockquote:last-of-type
+    margin-top: 30px !important
+
+  h2
+    margin-top: 55px
+    margin-bottom: .6em
 
   ul
     line-height: 160%
+    margin-top: 1.6em
     padding-left: 1em
 
 .breadcrumbs
