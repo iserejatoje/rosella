@@ -76,6 +76,7 @@
   margin: 0 auto
   text-transform: uppercase
   padding-top: 60px
+  line-height: 150%
 
   &-current
     span
@@ -88,6 +89,11 @@
     display: inline-flex
     align-items: center
     gap: 10px
+    line-height: 150%
+    transition: color 200ms ease-in-out
+
+    &:hover
+      color: $black
 
   svg
     fill: transparentize($black, .5)
