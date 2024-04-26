@@ -5,4 +5,4 @@
 - [Privacy policy](https://iserejatoje.github.io/rosella/privacy-policy.html)
 - [Blog](https://iserejatoje.github.io/rosella/blog.html)
 
-MADE WITH ❤️
+- MADE WITH ❤️
