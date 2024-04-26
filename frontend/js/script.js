@@ -68,9 +68,9 @@ $(function () {
                 $('header').removeClass('small');
             }
             if ($(window).scrollTop() >= 10) {
-                $('.header-faq, .header-blog').addClass('header--blur');
+                $('.header-faq, .header-blog, .header-service').addClass('header--blur');
             } else {
-                $('.header-faq, .header-blog').removeClass('header--blur');
+                $('.header-faq, .header-blog, .header-service').removeClass('header--blur');
             }
         })
     }

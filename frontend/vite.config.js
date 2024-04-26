@@ -13,6 +13,7 @@ export default defineConfig({
                 faq: resolve(__dirname, 'faq.html'),
                 privacy_policy: resolve(__dirname, 'privacy-policy.html'),
                 blog: resolve(__dirname, 'blog.html'),
+                service: resolve(__dirname, 'service.html'),
             },
         },
         css: {
