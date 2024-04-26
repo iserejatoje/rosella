@@ -1,6 +1,11 @@
 $(function () {
     console.log('init')
 
+    const phoneMask = document.querySelectorAll('[type="tel"]')
+    phoneMask.forEach(element => IMask(element, {
+        mask: '{61} (00) 0000 0000'
+    }))
+
     $('.cart-icon').click(function () {
         $(this).next().toggleClass('cart-open');
         return false
@@ -63,9 +68,9 @@ $(function () {
                 $('header').removeClass('small');
             }
             if ($(window).scrollTop() >= 10) {
-                $('.header-faq').addClass('header--blur');
+                $('.header-faq, .header-blog').addClass('header--blur');
             } else {
-                $('.header-faq').removeClass('header--blur');
+                $('.header-faq, .header-blog').removeClass('header--blur');
             }
         })
     }
@@ -100,8 +105,8 @@ $(function () {
         observerFooter.observe(section);
     });
 
-    const sectionsFaq = document.querySelectorAll('.faqs .faq-item');
-    const observerFaq = new IntersectionObserver((entries) => {
+    const sectionsAnimation = document.querySelectorAll('.faqs .faq-item, .article-list .article');
+    const observerAnimation = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
                 $(entry.target).css({'opacity': '1'});
@@ -109,10 +114,11 @@ $(function () {
         });
     }, {
         root: null,
-        threshold: 0.6,
+        threshold: 0.4,
     });
-    sectionsFaq.forEach((section) => {
-        observerFaq.observe(section);
+
+    sectionsAnimation.forEach((section) => {
+        observerAnimation.observe(section);
     });
 
     initHeaderEvents();

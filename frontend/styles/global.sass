@@ -4,7 +4,11 @@
 @import "fonts"
 @import "mixins"
 @import "services"
+@import "blog"
 @import "faq"
+
+.header-base
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../images/flowers/header.jpg) fixed
 
 *,
 *:after,
@@ -126,10 +130,7 @@ body
     margin-top: 45px
 
   &--page
-    margin-top: 65px
-
-  &-current
-    //text-transform: uppercase
+    margin-top: 30px
 
   &-divider
     margin-left: 5px
@@ -194,7 +195,7 @@ blockquote
 
 .header
   &--blur
-    background: rgba(0, 0, 0, 0.15)
+    background: rgba(0, 0, 0, 0.35)
     backdrop-filter: blur(10px)
 
   &--border
