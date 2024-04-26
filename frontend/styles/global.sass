@@ -506,6 +506,20 @@ blockquote
     padding: 10px 30px
     border-radius: 50px
 
+.container-left
+  padding-left: $container-padding
+
+  @include respond($container-width-wo-padding + 45px)
+    padding-right: 70px
+    margin-left: calc(100% - (($container-width-wo-padding + 30px) / 2))
+
+.container-right
+  padding-left: $container-padding
+
+  @include respond($container-width-wo-padding + 15px)
+    padding-left: 70px
+    margin-right: calc(100% - ($container-width-wo-padding / 2))
+
 .contact-us
   display: flex
   max-width: 910px

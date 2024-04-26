@@ -1,6 +1,19 @@
 $(function () {
     console.log('init')
 
+    const swiper = new Swiper('.partners-slider', {
+        loop: true,
+        autoplay: {
+            delay: 5000,
+        },
+        slidesPerView: 5,
+        speed: 3000,
+        pagination: {
+            el: '.swiper-pagination',
+        },
+
+    })
+
     const phoneMask = document.querySelectorAll('[type="tel"]')
     phoneMask.forEach(element => IMask(element, {
         mask: '{61} (00) 0000 0000'
