@@ -1,18 +1,21 @@
 $(function () {
     console.log('init')
 
-    const swiper = new Swiper('.partners-slider', {
-        loop: true,
-        autoplay: {
-            delay: 5000,
-        },
-        slidesPerView: 5,
-        speed: 3000,
-        pagination: {
-            el: '.swiper-pagination',
-        },
-
-    })
+    if (typeof Swiper !== 'undefined') {
+        const swiper = new Swiper('.partners-slider .swiper', {
+            loop: true,
+            maxBackfaceHiddenSlides: 5,
+            autoplay: {
+                delay: 5000,
+            },
+            slidesPerView: 5,
+            speed: 800,
+            navigation: {
+                nextEl: '.partners-slider .next',
+                prevEl: '.partners-slider .prev',
+            },
+        })
+    }
 
     const phoneMask = document.querySelectorAll('[type="tel"]')
     phoneMask.forEach(element => IMask(element, {
@@ -129,9 +132,24 @@ $(function () {
         root: null,
         threshold: 0.4,
     });
-
     sectionsAnimation.forEach((section) => {
         observerAnimation.observe(section);
+    });
+
+
+    const imageRowAnimation = document.querySelectorAll('.images-grid .row');
+    const observerImageRowAnimation = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                $(entry.target).css({'opacity': '1'});
+            }
+        });
+    }, {
+        root: null,
+        threshold: 0.3,
+    });
+    imageRowAnimation.forEach((section) => {
+        observerImageRowAnimation.observe(section);
     });
 
     initHeaderEvents();
