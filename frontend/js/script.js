@@ -146,7 +146,7 @@ $(function () {
         });
     }, {
         root: null,
-        threshold: 0.,
+        threshold: 0.4,
     });
     imageRowAnimation.forEach((section) => {
         observerImageRowAnimation.observe(section);
