@@ -5,7 +5,7 @@
 
 .header-service-wrapper
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 115.31%), url(../images/service/background.jpg) fixed no-repeat top center
-  padding-bottom: 70px
+  padding-bottom: 80px
 
   .make-an-enquiry
     margin-top: 30px
@@ -17,6 +17,7 @@
     font-size: 100px
     max-width: 1120px
     margin-bottom: 20px
+    margin-top: 0.5em
 
 .header-service
   transition: min-height 300ms ease-in-out, background 300ms ease-in-out !important
@@ -33,6 +34,13 @@
   .row
     display: flex
     transition: opacity 600ms ease-in-out
+
+    img
+      transition: transform 400ms ease-in-out, opacity 400ms ease-in-out
+
+    &:hover
+      img
+        transform: scale(1.02)
 
     .description
       line-height: 160%
@@ -61,10 +69,6 @@
         display: block
         height: auto
         width: 100%
-        transition: transform 400ms ease-in-out, opacity 400ms ease-in-out
-
-        &:hover
-          transform: scale(1.02)
 
 .partners
   padding: 110px 0 140px 0
