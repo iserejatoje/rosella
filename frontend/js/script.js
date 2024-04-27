@@ -1,5 +1,6 @@
 $(function () {
-    console.log('init')
+    console.log('Rosella init..')
+    console.log('Finish')
 
     if (typeof Swiper !== 'undefined') {
         const swiper = new Swiper('.partners-slider .swiper', {
@@ -16,10 +17,12 @@ $(function () {
         })
     }
 
-    const phoneMask = document.querySelectorAll('[type="tel"]')
-    phoneMask.forEach(element => IMask(element, {
-        mask: '{61} (00) 0000 0000'
-    }))
+    if (typeof IMask !== 'undefined') {
+        const phoneMask = document.querySelectorAll('[type="tel"]')
+        phoneMask.forEach(element => IMask(element, {
+            mask: '{61} (00) 0000 0000'
+        }))
+    }
 
     $('.cart-icon').click(function () {
         $(this).next().toggleClass('cart-open');
@@ -150,7 +153,6 @@ $(function () {
     imageRowAnimation.forEach((section) => {
         observerImageRowAnimation.observe(section);
     });
-
 
     const partnersAnimation = document.querySelectorAll('.partners .container');
     const observerPartners = new IntersectionObserver((entries) => {
