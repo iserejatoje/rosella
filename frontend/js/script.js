@@ -137,7 +137,7 @@ $(function () {
     });
 
 
-    const imageRowAnimation = document.querySelectorAll('.images-grid .row');
+    const imageRowAnimation = document.querySelectorAll('.images-grid img');
     const observerImageRowAnimation = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
@@ -146,7 +146,7 @@ $(function () {
         });
     }, {
         root: null,
-        threshold: 0.3,
+        threshold: 0.,
     });
     imageRowAnimation.forEach((section) => {
         observerImageRowAnimation.observe(section);

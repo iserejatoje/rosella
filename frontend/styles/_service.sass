@@ -32,7 +32,6 @@
 
   .row
     display: flex
-    opacity: 0
     transition: opacity 600ms ease-in-out
 
     .description
@@ -58,10 +57,11 @@
 
       img
         max-width: 100%
+        opacity: 0
         display: block
         height: auto
         width: 100%
-        transition: transform 400ms ease-in-out
+        transition: transform 400ms ease-in-out, opacity 400ms ease-in-out
 
         &:hover
           transform: scale(1.02)
