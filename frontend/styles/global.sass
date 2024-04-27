@@ -30,19 +30,31 @@ html
   &--white
     padding: 18px 30px
     display: inline-flex
-    border-radius: 90px
-    background: $white
+    background: transparent
     border: none
     text-transform: uppercase
     font-size: 14px
     font-weight: 500
     text-decoration: none
     color: $black
-    transition: background 200ms ease-in-out, color 200ms ease-in-out
+    position: relative
+    transition: color 200ms ease-in-out
+
+    &:before
+      border-radius: 90px
+      content: ''
+      position: absolute
+      background: $white
+      left: 0
+      right: 0
+      top: 0
+      transition: background 200ms ease-in-out, color 200ms ease-in-out, transform 200ms ease-in-out
+      bottom: 0
+      z-index: -1
 
     &:hover
-      background: $black
-      color: $white
+      &:before
+        transform: scale(1.04)
 
   &--submit
     padding: 18px 50px
@@ -102,7 +114,6 @@ html
 
       svg
         transform: translateX(6px)
-
 
     .subtotal-amount
       margin-left: auto
@@ -217,11 +228,11 @@ blockquote
 
 .header
   &--blur
-    background: rgba(0, 0, 0, 0.35)
+    background: rgba(0, 0, 0, 0.3)
     backdrop-filter: blur(10px)
 
   &--border
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3)
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2)
 
   .cart-icon
     position: relative
@@ -391,7 +402,7 @@ blockquote
   transition: min-height 300ms ease-in-out
 
   &.small
-    min-height: 78px
+    min-height: 80px
 
   &-contacts
     display: flex
@@ -491,6 +502,9 @@ blockquote
     display: flex
     gap: 20px
 
+  .column
+    flex: 1
+
   textarea
     resize: none
     min-height: 170px
@@ -557,8 +571,11 @@ blockquote
   flex: 0 0 auto
   background-color: $black
 
+  &--fixed
+    background-attachment: fixed !important
+
   &--flowers
-    background: $black url(../images/footer/background.jpg) no-repeat fixed center
+    background: $black url(../images/footer/background.jpg) no-repeat bottom center
 
   color: $white
   display: flex

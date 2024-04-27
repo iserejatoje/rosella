@@ -3,6 +3,52 @@
 @import "colors"
 @import "fonts"
 
+.gallery-bottom
+  margin-top: 60px
+
+.gallery
+  margin-top: 25px
+  display: flex
+  flex-direction: column
+  gap: 30px
+
+  &-item
+    text-decoration: none
+    color: $black
+
+  .row
+    display: flex
+    gap: 30px
+
+  .image
+    position: relative
+    overflow: hidden
+    border-radius: 10px 10px 10px 0
+
+    &:hover
+      .image-title
+        bottom: 0
+
+      img
+        transform: scale(1.05)
+
+    img
+      display: block
+      max-width: 100%
+      height: auto
+      transition: transform 350ms ease-in-out
+
+    &-title
+      position: absolute
+      bottom: -4px
+      left: 0
+      transition: bottom 200ms ease-in-out
+      max-width: 470px
+      background: $white
+      text-transform: uppercase
+      padding: 10px 10px 0 0
+      border-radius: 0 10px 0 0
+
 .header-service-wrapper
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 123%), url(../images/service/background.jpg) fixed no-repeat top center
   padding-bottom: 70px
@@ -118,18 +164,14 @@
       cursor: pointer
 
       &:hover
-        &:after
+        &:before
           transform: scale(1.08)
           background: transparentize($white, .75)
 
-      svg
-        position: relative
-        z-index: 2
-
-      &:after
+      &:before
         border-radius: 50%
         background: transparentize($white, .8)
-        transition: transform 150ms ease-in-out, background 200ms ease-in-out
+        transition: transform 200ms ease-in-out, background 200ms ease-in-out
         content: ''
         position: absolute
         width: 40px
@@ -153,12 +195,13 @@
   opacity: 0
   visibility: hidden
   animation-fill-mode: forwards
-  animation-duration: 1000ms
+  animation-duration: 700ms
+  will-change: transform
 
 @keyframes fadeIn
   0%
     opacity: 0
-    transform: translateY(10px)
+    transform: translateY(6px)
     visibility: hidden
 
   100%
@@ -166,6 +209,6 @@
     transform: translateY(0)
     visibility: visible
 
-.contact-us
-  & + .footer-top
-    border-top: 1px solid rgba(255, 255, 255, 0.2)
+.contact-us-service
+  background: url(../images/service/contact-us.jpg) no-repeat center
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2)
