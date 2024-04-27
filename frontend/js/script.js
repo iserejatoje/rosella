@@ -163,7 +163,7 @@ $(function () {
         });
     }, {
         root: null,
-        threshold: 0.3,
+        threshold: 0.6,
     });
     partnersAnimation.forEach((section) => {
         observerPartners.observe(section);
