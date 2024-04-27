@@ -136,7 +136,7 @@ $(function () {
     });
 
 
-    const imageRowAnimation = document.querySelectorAll('.images-grid img');
+    const imageRowAnimation = document.querySelectorAll('.images-grid .row');
     const observerImageRowAnimation = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
@@ -149,6 +149,22 @@ $(function () {
     });
     imageRowAnimation.forEach((section) => {
         observerImageRowAnimation.observe(section);
+    });
+
+
+    const partnersAnimation = document.querySelectorAll('.partners .container');
+    const observerPartners = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                $(entry.target).css({'opacity': '1'});
+            }
+        });
+    }, {
+        root: null,
+        threshold: 0.3,
+    });
+    partnersAnimation.forEach((section) => {
+        observerPartners.observe(section);
     });
 
     initHeaderEvents();
