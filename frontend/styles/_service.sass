@@ -132,13 +132,26 @@
   .page-title
     color: $white
 
+.animation-delay-1
+  animation-delay: 100ms
+
+.animation-delay-2
+  animation-delay: 250ms
+
+.animation-delay-3
+  animation-delay: 500ms
+
 .animation-opacity
   animation-name: fadeIn
+  opacity: 0
+  animation-fill-mode: forwards
   animation-duration: 1000ms
 
 @keyframes fadeIn
   0%
     opacity: 0
+    transform: translateY(-10px)
 
   100%
     opacity: 1
+    transform: translateY(0)
