@@ -3,7 +3,6 @@ $(function () {
 
     if (typeof Swiper !== 'undefined') {
         const swiper = new Swiper('.partners-slider .swiper', {
-            loop: true,
             maxBackfaceHiddenSlides: 5,
             autoplay: {
                 delay: 5000,
