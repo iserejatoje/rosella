@@ -15,21 +15,25 @@
   &-item
     text-decoration: none
     color: $black
+    transition: opacity 400ms ease-in-out
+    opacity: 0
 
   .row
     display: flex
-    opacity: 0
     transition: opacity 400ms ease-out
     gap: 30px
 
     &:nth-child(odd)
       .gallery-item:first-child
         transition-delay: 0ms
+      .gallery-item:last-child
+        transition-delay: 350ms
 
     &:nth-child(even)
       .gallery-item:first-child
-        transition-delay: 300ms
-
+        transition-delay: 0ms
+      .gallery-item:last-child
+        transition-delay: 350ms
   .image
     position: relative
     overflow: hidden

@@ -125,7 +125,7 @@ $(function () {
         observerFooter.observe(section);
     });
 
-    const sectionsAnimation = document.querySelectorAll('.faqs .faq-item, .article-list .article, .gallery .row, .contact-us-service');
+    const sectionsAnimation = document.querySelectorAll('.faqs .faq-item, .article-list .article, .gallery .gallery-item, .contact-us-service');
     const observerAnimation = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
