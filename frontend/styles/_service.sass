@@ -66,22 +66,10 @@
   background-size: 100%
   position: relative
   transition: background-size 400ms ease-in-out
-
-  &:after
-    content: ''
-    position: absolute
-    transition: background 400ms ease-in-out
-    left: 0
-    pointer-events: none
-    user-select: none
-    right: 0
-    top: 0
-    bottom: 0
-    background: #000
+  clip-path: inset(0% 0 calc(100% - 100px) 0)
 
   &.active
-    &:after
-      background: transparent
+    clip-path: inset(0% 0 0% 0) !important
 
   &:hover
     background-size: 103%

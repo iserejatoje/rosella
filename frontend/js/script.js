@@ -150,7 +150,7 @@ $(function () {
         });
     }, {
         root: null,
-        threshold: 0.35,
+        threshold: 0.1,
     });
     sectionsAnimationHeader.forEach((section) => {
         observerAnimationHeader.observe(section);
