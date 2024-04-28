@@ -1,6 +1,4 @@
 $(function () {
-    console.log('Rosella init..')
-    console.log('Finish')
 
     if (typeof Swiper !== 'undefined') {
         const swiper = new Swiper('.partners-slider .swiper', {
@@ -79,7 +77,7 @@ $(function () {
     })
 
     function initHeaderEvents() {
-        $(window).scroll(function (e) {
+        function init() {
             if ($(window).scrollTop() >= 90) {
                 $('header').addClass('small');
             } else {
@@ -90,6 +88,10 @@ $(function () {
             } else {
                 $('.header-faq, .header-blog, .header-service').removeClass('header--blur');
             }
+        }
+        init();
+        $(window).scroll(function (e) {
+            init();
         })
     }
 
@@ -123,7 +125,7 @@ $(function () {
         observerFooter.observe(section);
     });
 
-    const sectionsAnimation = document.querySelectorAll('.faqs .faq-item, .article-list .article');
+    const sectionsAnimation = document.querySelectorAll('.faqs .faq-item, .article-list .article, .gallery .row, .contact-us-service');
     const observerAnimation = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
@@ -132,10 +134,26 @@ $(function () {
         });
     }, {
         root: null,
-        threshold: 0.4,
+        threshold: 0.35,
     });
     sectionsAnimation.forEach((section) => {
         observerAnimation.observe(section);
+    });
+
+
+    const sectionsAnimationHeader = document.querySelectorAll('.header-service-wrapper');
+    const observerAnimationHeader = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                $(entry.target).addClass('active')
+            }
+        });
+    }, {
+        root: null,
+        threshold: 0.35,
+    });
+    sectionsAnimationHeader.forEach((section) => {
+        observerAnimationHeader.observe(section);
     });
 
 

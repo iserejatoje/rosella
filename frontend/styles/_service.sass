@@ -18,7 +18,17 @@
 
   .row
     display: flex
+    opacity: 0
+    transition: opacity 400ms ease-out
     gap: 30px
+
+    &:nth-child(odd)
+      .column:first-child
+        transition-delay: 0ms
+
+    &:nth-child(even)
+      .column:first-child
+        transition-delay: 400ms
 
   .image
     position: relative
@@ -48,12 +58,29 @@
 
 .header-service-wrapper
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 123%), url(../images/service/background.jpg) fixed no-repeat top center
-  padding-bottom: 70px
+  padding-bottom: 62px
   background-size: 100%
+  position: relative
   transition: background-size 400ms ease-in-out
 
+  &:after
+    content: ''
+    position: absolute
+    transition: background 400ms ease-in-out
+    left: 0
+    pointer-events: none
+    user-select: none
+    right: 0
+    top: 0
+    bottom: 0
+    background: #000
+
+  &.active
+    &:after
+      background: transparent
+
   &:hover
-    background-size: 102%
+    background-size: 103%
 
   .make-an-enquiry
     margin-top: 30px
@@ -189,23 +216,15 @@
 
 .animation-opacity
   animation-name: fadeIn
-  opacity: 0
-  visibility: hidden
+  //opacity: 0
+  //visibility: hidden
   animation-fill-mode: forwards
   animation-duration: 700ms
+  animation: ease-out
   will-change: transform
 
-@keyframes fadeIn
-  0%
-    opacity: 0
-    transform: translateY(6px)
-    visibility: hidden
-
-  100%
-    opacity: 1
-    transform: translateY(0)
-    visibility: visible
-
 .contact-us-service
+  transition: opacity 400ms ease-in-out
+  opacity: 0
   background: url(../images/service/contact-us.jpg) no-repeat center
   border-bottom: 1px solid rgba(255, 255, 255, 0.2)
