@@ -140,23 +140,6 @@ $(function () {
         observerAnimation.observe(section);
     });
 
-
-    const sectionsAnimationHeader = document.querySelectorAll('.header-service-wrapper');
-    const observerAnimationHeader = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-                $(entry.target).addClass('active')
-            }
-        });
-    }, {
-        root: null,
-        threshold: 0.1,
-    });
-    sectionsAnimationHeader.forEach((section) => {
-        observerAnimationHeader.observe(section);
-    });
-
-
     const imageRowAnimation = document.querySelectorAll('.images-grid .row');
     const observerImageRowAnimation = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {

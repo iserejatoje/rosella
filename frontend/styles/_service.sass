@@ -65,11 +65,7 @@
   padding-bottom: 62px
   background-size: 100%
   position: relative
-  transition: background-size 400ms ease-in-out, clip-path 400ms ease-in-out
-  clip-path: inset(0% 0 calc(100% - 100px) 0)
-
-  &.active
-    clip-path: inset(0% 0 0% 0) !important
+  transition: background-size 400ms ease-in-out
 
   &:hover
     background-size: 103%
@@ -87,7 +83,7 @@
     margin-top: 0.5em
 
 .header-service
-  transition: min-height 300ms ease-in-out, background 300ms ease-in-out !important
+  transition: min-height 300ms ease-in-out, background 300ms ease-in-out, transform 300ms ease-in-out !important
   background: transparent
 
 .gallery-wrapper
