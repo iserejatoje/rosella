@@ -14,6 +14,7 @@ export default defineConfig({
                 privacy_policy: resolve(__dirname, 'privacy-policy.html'),
                 blog: resolve(__dirname, 'blog.html'),
                 service: resolve(__dirname, 'service.html'),
+                cart: resolve(__dirname, 'cart.html'),
             },
         },
         css: {

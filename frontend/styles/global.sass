@@ -73,10 +73,6 @@ html
     color: $white
     transition: background 200ms ease-in-out, color 200ms ease-in-out
 
-    &:focus
-      background: $white
-      color: $black
-
     &:hover
       background: $white
       color: $black
@@ -94,10 +90,6 @@ html
     color: $black
     transition: background 200ms ease-in-out, color 200ms ease-in-out
 
-    &:focus
-      background: $black
-      color: $white
-
     &:hover
       background: $black
       color: $white
@@ -113,6 +105,39 @@ html
     text-decoration: none
     color: $black
     transition: background 200ms ease-in-out, color 200ms ease-in-out
+
+  &--cart-order
+    padding: 15px 18px 15px 18px
+    height: 59px
+    margin-top: 25px
+    border: none
+    text-transform: uppercase
+    background: transparent
+    font-size: 16px
+    font-weight: 500
+    width: 100%
+    display: flex
+    align-items: center
+    text-decoration: none
+    color: $white
+    position: relative
+    transition: background 200ms ease-in-out, color 200ms ease-in-out
+
+    &:before
+      border-radius: 90px
+      position: absolute
+      transition: transform 200ms ease-in-out
+      content: ''
+      left: 0
+      z-index: -1
+      top: 0
+      right: 0
+      bottom: 0
+      background: $black
+
+    &:hover
+      &:before
+        transform: scale(1.04)
 
   &--subtotal
     padding: 15px 15px 15px 20px
@@ -135,7 +160,7 @@ html
       transition: transform 200ms ease-in-out
 
     &:hover
-      background: lighten($black, 14%)
+      background: lighten($black, 12%)
 
       svg
         transform: translateX(6px)
@@ -201,6 +226,10 @@ body
 
   &-link
     text-decoration: none
+    transition: opacity 200ms ease-in-out
+
+    &:hover
+      opacity: 1
 
 .burger
   background: transparent
@@ -252,6 +281,8 @@ blockquote
   padding: 0
 
 .header
+  transition: min-height 300ms ease-in-out, background 300ms ease-in-out, backdrop-filter 300ms ease-in-out
+
   &--blur
     background: rgba(0, 0, 0, 0.3)
     backdrop-filter: blur(10px)
@@ -279,6 +310,13 @@ blockquote
     padding-top: 10px
     padding-bottom: 10px
 
+    img
+      transition: opacity 200ms ease-in-out
+
+    &:hover
+      img
+        opacity: .85
+
     &:last-child
       border-bottom: 1px solid transparentize($black, .9)
 
@@ -291,9 +329,6 @@ blockquote
 
   .cart-wrapper
     position: relative
-
-  .cart-bottom
-    //
 
   .cart-product
     max-width: 150px
@@ -430,7 +465,6 @@ blockquote
   display: flex
   gap: 70px
   align-items: center
-  transition: min-height 300ms ease-in-out
 
   &.small
     min-height: 80px
@@ -524,11 +558,13 @@ blockquote
   &-inner
     flex: 1 0 auto
 
-.form
-  display: flex
-  gap: 20px
-  flex-direction: column
+.contact-us
+  .form
+    display: flex
+    gap: 20px
+    flex-direction: column
 
+.form
   .row
     display: flex
     gap: 20px
@@ -542,20 +578,38 @@ blockquote
     padding: 22px 30px
     border-radius: 10px
 
+  &-light
+    input,
+    textarea
+      background: transparent
+      color: $white
+      border: 1px solid rgba(255, 255, 255, 0.2)
+
+      &:focus
+        border-color: rgba(255, 255, 255, 0.6)
+
+      &::placeholder
+        color: transparentize($white, .4)
+
+
+  &-dark
+    input,
+    textarea
+      background: transparent
+      color: $black
+      border: 1px solid rgba(0, 0, 0, 0.2)
+
+      &:focus
+        border-color: rgba(0, 0, 0, 0.6)
+
+      &::placeholder
+        color: transparentize($black, .4)
+
   input,
   textarea
-    background: transparent
-    color: $white
-    border: 1px solid rgba(255, 255, 255, 0.2)
     outline: none
     width: 100%
     transition: border-color 200ms ease-in-out
-
-    &:focus
-      border-color: rgba(255, 255, 255, 0.6)
-
-    &::placeholder
-      color: transparentize($white, .4)
 
   input
     min-height: 60px

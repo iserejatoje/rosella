@@ -9,3 +9,315 @@
   h1
     padding-bottom: 24px
     margin-top: 10px
+    margin-bottom: 0
+
+.cards-list
+  display: flex
+  flex-direction: column
+  gap: 30px
+
+.cart-page
+  margin-top: 60px
+  align-items: flex-start
+  display: flex
+  gap: 60px
+
+  input,
+  textarea
+    font-size: 14px
+
+  .information-block
+    padding-bottom: 40px
+
+  .form-controls
+    display: flex
+    flex-direction: column
+    font-size: 14px
+    gap: 20px
+
+  .row
+    display: flex
+    gap: 20px
+
+  .cart-information
+    display: flex
+    flex-direction: column
+
+  .card
+    &-add
+      display: grid
+      grid-gap: 30px
+
+    &-insert
+      display: flex
+      justify-content: space-between
+
+      button
+        background: transparent
+        padding: 0
+        outline: 0
+        border: none
+        cursor: pointer
+        font-size: 14px
+        text-transform: uppercase
+        color: transparentize($black, .5)
+        transition: color 200ms ease-in-out
+
+        &:hover
+          color: $black
+
+    &-bottom
+      font-size: 12px
+      opacity: .5
+      margin-top: 10px
+      margin-bottom: 10px
+
+    &-title
+      text-transform: uppercase
+      font-size: 14px
+
+      span
+        opacity: .5
+
+    &-message
+      width: 100%
+      margin-top: 15px
+
+  .info-item
+    svg
+      transition: transform 400ms ease-in-out
+
+    &.active
+      > button[type="button"]
+        svg
+          transform: rotate(180deg)
+
+    > button[type="button"]
+      background: transparent
+      width: 100%
+      display: flex
+      line-height: 160%
+      padding: 15px 0 20px 0
+      justify-content: space-between
+      align-items: center
+      font-size: 20px
+      font-weight: 500
+      cursor: pointer
+      border: none
+      text-align: left
+      min-height: 30px
+      transition: opacity 200ms ease-in-out
+
+      &:hover
+        opacity: .6
+
+      svg
+        margin-left: 30px
+        flex-shrink: 0
+
+  .cart-icon
+    position: relative
+
+  .cart-count
+    position: absolute
+    bottom: 2px
+    left: 0
+    right: 0
+    color: $black
+    font-size: 15px
+    line-height: 100%
+    text-align: center
+
+  .cart-item
+    display: flex
+    align-items: center
+    padding: 10px 0
+
+    img
+      transition: opacity 200ms ease-in-out
+
+    &:hover
+      img
+        opacity: .85
+
+  .cart-bottom
+    display: grid
+
+  .cart-image
+    margin-right: 15px
+    overflow: hidden
+    @extend .border-radius-10
+
+    img
+      display: block
+      @extend .border-radius-10
+      max-width: 103px
+      max-height: 106px
+      height: auto
+
+  .cart-questions
+    padding-top: 35px
+    line-height: 160%
+    font-size: 20px
+    text-wrap: balance
+
+    a
+      color: $black
+      font-weight: 500
+      transition: opacity 200ms ease-in-out
+
+      &:hover
+        opacity: .7
+
+  .cart-subtotal
+    line-height: 150%
+    font-weight: 400
+    font-size: 16px
+    padding: 25px 0
+    margin-top: 10px
+    border-top: 1px solid transparentize($black, .9)
+    border-bottom: 1px solid transparentize($black, .9)
+
+    .delivery-info
+      text-transform: uppercase
+      margin-top: 10px
+      color: transparentize($black, .5)
+
+    .info
+      display: flex
+      font-weight: 500
+      text-transform: uppercase
+      font-size: 25px
+      justify-content: space-between
+
+  .cart-product
+    max-width: 255px
+    font-size: 16px
+    text-transform: uppercase
+    line-height: 140%
+    padding-right: 30px
+
+    a
+      text-decoration: none
+      color: $black
+      transition: color 200ms ease-in-out
+
+      &:hover
+        color: transparentize($black, .33)
+
+  .cart-actions
+    margin-left: auto
+    text-align: right
+
+  .cart-price
+    font-size: 20px
+    font-weight: 500
+    line-height: 140%
+
+  .cart-remove
+    font-size: 14px
+    line-height: 140%
+    margin-top: 4px
+    color: rgba(0, 0, 0, 0.4)
+    background: transparent
+    padding: 0
+    border: none
+    cursor: pointer
+    text-transform: uppercase
+    transition: color 200ms ease-in-out
+
+    &:hover
+      color: rgba(0, 0, 0, 0.75)
+
+  .cart-amount
+    display: flex
+    height: 25px
+    align-items: center
+    margin-left: 10px
+
+    input
+      width: 100%
+      max-width: 30px
+      font-size: 20px
+      text-align: center
+      border: none
+      padding: 0
+      outline: none
+
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button
+      appearance: none
+      margin: 0
+
+    input[type=number]
+      appearance: textfield
+
+    button
+      flex-shrink: 0
+      background: transparent
+      border: none
+      outline: none
+      padding: 0
+      width: 25px
+      height: 25px
+      display: grid
+      place-content: center
+      cursor: pointer
+
+      path
+        transition: fill-opacity 200ms ease-in-out
+
+      &:hover
+        path
+          fill-opacity: .8
+
+  .cart-top
+    display: flex
+    justify-content: space-between
+    text-transform: uppercase
+    margin-bottom: 10px
+    padding-bottom: 20px
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1)
+
+    span
+      opacity: .5
+
+  .cart-close
+    background: transparent
+    padding: 0
+    outline: none
+    cursor: pointer
+    border: none
+
+  > .column
+    width: 50%
+
+    .cart-information
+      @extend .border-radius-10
+      border: 1px solid rgba(0, 0, 0, 0.2)
+      padding: 30px 40px
+
+      [type="submit"]
+        max-width: 300px
+        display: flex
+        justify-content: space-between
+
+        .label
+          max-width: 80px
+          width: 100%
+          font-weight: 400
+          border: 1px solid $white
+          border-radius: 40px
+          min-height: 35px
+          display: grid
+          place-content: center
+          font-size: 14px
+
+        .amount
+          font-size: 20px
+          font-weight: 500
+
+        .all-sum
+          font-size: 14px
+          text-transform: none
+          font-weight: 400

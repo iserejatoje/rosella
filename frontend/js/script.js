@@ -45,7 +45,8 @@ $(function () {
 
     $('.cart-remove').click(function () {
         let $cart = $(this).parents('.cart-item');
-        let $items = $('.cart-bottom .cart-item');
+        let $cartBlock = $(this).parents('.cart-bottom');
+        let $items = $cartBlock.find('.cart-item');
 
         let items_length = $items.length;
         if (items_length < 2) {
@@ -55,13 +56,15 @@ $(function () {
             let items_length = $items.length;
             if (items_length < 2) {
                 $('.header .cart-bottom').html('<span style="opacity: .5; display: block;">Cart is empty</span>')
+                $('.cart-page .cart-bottom').html('<span style="opacity: .5; display: block; padding-top: 10px;">Cart is empty</span>')
+                $('.cart-page .column:first-child').html('<div class="large-title">Cart is empty</div>');
+                $('.cart-page .column:last-child').remove()
             }
 
             $cart.remove();
-            let items_length2 = $('.cart-bottom .cart-item').length;
-            $('.cart-counter span').html('(' + items_length2 + ')');
-            $('.cart-count').html(items_length2);
-
+            let items_length_after = $('.cart-bottom .cart-item').length;
+            $('.cart-counter span').html(items_length_after ? '(' + items_length_after + ')' : '');
+            $('.cart-count').html(items_length_after);
 
         })
         return false
@@ -69,6 +72,11 @@ $(function () {
 
     $('.cart-amount .plus').click(function () {
         $(this).parents('.cart-amount').find('.cart-input').get(0).value++
+    })
+
+    $('.info-item > button').click(function () {
+        $(this).parents('.info-item').find('.information-block').slideToggle(400)
+        $(this).parents('.info-item').toggleClass('active')
     })
 
     $('.cart-amount .minus').click(function () {
@@ -84,9 +92,9 @@ $(function () {
                 $('header').removeClass('small');
             }
             if ($(window).scrollTop() >= 10) {
-                $('.header-faq, .header-blog, .header-service').addClass('header--blur');
+                $('.header-faq, .header-blog, .header-service, .header-cart .header').addClass('header--blur');
             } else {
-                $('.header-faq, .header-blog, .header-service').removeClass('header--blur');
+                $('.header-faq, .header-blog, .header-service, .header-cart .header').removeClass('header--blur');
             }
         }
         init();
