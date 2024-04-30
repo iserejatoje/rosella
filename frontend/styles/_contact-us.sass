@@ -1,0 +1,90 @@
+@import "config"
+@import "mixins"
+@import "colors"
+@import "fonts"
+
+.body-contact-us
+  background: $black url(../images/contact-us/header.jpg) no-repeat top right
+
+  h1
+    font-size: 50px
+    max-width: 815px
+    text-transform: none
+    margin-top: 80px
+
+.contacts-gallery
+  display: grid
+  grid-template-columns: 1fr 1fr 1fr
+  grid-gap: 30px
+
+  .image
+    @extend .border-radius-10
+    overflow: hidden
+    transition: filter 200ms ease-in-out
+
+    &:hover
+      filter: brightness(1.08)
+
+      img
+        transform: scale(1.04)
+
+  img
+    max-width: 100%
+    height: auto
+    display: block
+    transition: transform 400ms ease-in-out
+
+#map
+  height: 450px
+  width: 100%
+  display: block
+  margin-top: 50px
+  overflow: hidden
+  @extend .border-radius-10
+
+.contacts-time
+  padding: 30px 0
+  color: $white
+  display: inline-flex
+  font-size: 16px
+  margin-bottom: 40px
+  gap: 45px
+  border-top: 1px solid rgba(255, 255, 255, 0.2)
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2)
+
+  .time
+    display: grid
+    gap: 6px
+
+  .day
+    opacity: .5
+
+.contacts-info
+  display: flex
+  margin-top: 70px
+  align-items: center
+  color: $white
+  gap: 50px
+  margin-bottom: 35px
+
+  button
+    max-width: 207px
+    width: 100%
+    justify-content: center
+
+  .phone
+    font-size: 40px
+    line-height: 120%
+
+  .email
+    font-size: 20px
+    line-height: 120%
+
+  a
+    text-decoration: none
+    color: $white
+    display: inline-flex
+    transition: opacity 200ms ease-in-out
+
+    &:hover
+      opacity: .8

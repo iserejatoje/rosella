@@ -6,19 +6,24 @@
           content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0">
     <link rel="icon" type="image/svg+xml" href="./vite.svg"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>FAQ &mdash; Rosella Floral Coast</title>
+    <title>Contact Us &mdash; Rosella Floral Coast</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/4.0.0-beta/jquery.min.js"
             integrity="sha512-qFOQ9YFAeGj1gDOuUD61g3D+tLDv3u1ECYWqT82WQoaWrOhAY+5mRMTTVsQdWutbA5FORCnkEPEgU0OF8IzGvA=="
             crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet"  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/imask"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"/>
   <script type="module" crossorigin src="./assets/script-e1b64831.js"></script>
   <link rel="stylesheet" href="./assets/script-c188d315.css">
 </head>
-<body>
+<body class="body-contact-us">
 
 <div class="rosella">
     <div class="rosella-inner">
-        <div class="header-wrapper header-base">
-            <header class="header header--swimming header-faq header--background header--border">
+        <div class="header-wrapper">
+            <header class="header header-contacts header--swimming header--background header--border">
                 <a href="" class="logo">
                     <img srcset="./assets/logoX2-43b82695.png 2x" src="data:image/png;base64,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" decoding="async" alt="Rosella Floral Coast">
                 </a>
@@ -167,88 +172,69 @@
                     <div class="breadcrumbs breadcrumbs--page breadcrumbs--light">
                         <a href="/" class="breadcrumbs-item breadcrumbs-link">Home</a>
                         <span class="breadcrumbs-item breadcrumbs-divider">&mdash;</span>
-                        <span class="breadcrumbs-item breadcrumbs-current">FAQ’S</span>
+                        <span class="breadcrumbs-item breadcrumbs-current">Contact Us</span>
                     </div>
-
-                    <h1>FAQ’S</h1>
+                    <h1>«Westfield Bondi Junction» Valet P4, 500 Oxford Street, Bondi Junction NSW 2022</h1>
                 </div>
             </div>
         </div>
 
         <div class="rosella-page">
-
-            <div class="faqs">
-                <div class="container">
-                    <div class="page-title">Frequently asked questions</div>
-                    <div class="faqs-list">
-                        <div class="faq">
-                            <div class="faq-item">
-                                <button class="faq-button">How can I place an order for delivery? <span class="circle-arrow"><svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L5 5L9 0.999999" stroke="black"/></svg></span></button>
-                                <div class="faq-content">
-                                    Yes, this can be done by ordering in our store or calling 1300 328 308 and speaking to one of our instore florists or by selecting pick up option on our online order form.
-                                </div>
-                            </div>
-                            <div class="faq-item">
-                                <button class="faq-button">What if I select a date that falls on a Saturday, Sunday or a public holiday? <span class="circle-arrow"><svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L5 5L9 0.999999" stroke="black"/></svg></span></button>
-                                <div class="faq-content">
-                                    Yes, this can be done by ordering in our store or calling 1300 328 308 and speaking to one of our instore florists or by selecting pick up option on our online order form.
-                                </div>
-                            </div>
-                            <div class="faq-item">
-                                <button class="faq-button">Can I request a time for delivery? <span class="circle-arrow"><svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L5 5L9 0.999999" stroke="black"/></svg></span></button>
-                                <div class="faq-content">
-                                    Yes, this can be done by ordering in our store or calling 1300 328 308 and speaking to one of our instore florists or by selecting pick up option on our online order form.
-                                </div>
-                            </div>
-                            <div class="faq-item">
-                                <button class="faq-button">Can I place an order to collect in store? <span class="circle-arrow"><svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L5 5L9 0.999999" stroke="black"/></svg></span></button>
-                                <div class="faq-content">
-                                    Yes, this can be done by ordering in our store or calling 1300 328 308 and speaking to one of our instore florists or by selecting pick up option on our online order form.
-                                </div>
-                            </div>
-                            <div class="faq-item">
-                                <button class="faq-button">Do you offer same day delivery? <span class="circle-arrow"><svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L5 5L9 0.999999" stroke="black"/></svg></span></button>
-                                <div class="faq-content">
-                                    Yes, this can be done by ordering in our store or calling 1300 328 308 and speaking to one of our instore florists or by selecting pick up option on our online order form.
-                                </div>
-                            </div>
-                            <div class="faq-item">
-                                <button class="faq-button">What are your delivery fees? <span class="circle-arrow"><svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L5 5L9 0.999999" stroke="black"/></svg></span></button>
-                                <div class="faq-content">
-                                    Yes, this can be done by ordering in our store or calling 1300 328 308 and speaking to one of our instore florists or by selecting pick up option on our online order form.
-                                </div>
-                            </div>
-                            <div class="faq-item">
-                                <button class="faq-button">What if I select a date that falls on a Saturday, Sunday or a public holiday? <span class="circle-arrow"><svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L5 5L9 0.999999" stroke="black"/></svg></span></button>
-                                <div class="faq-content">
-                                    Yes, this can be done by ordering in our store or calling 1300 328 308 and speaking to one of our instore florists or by selecting pick up option on our online order form.
-                                </div>
-                            </div>
-                            <div class="faq-item">
-                                <button class="faq-button">Can I request a time for delivery? <span class="circle-arrow"><svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L5 5L9 0.999999" stroke="black"/></svg></span></button>
-                                <div class="faq-content">
-                                    Yes, this can be done by ordering in our store or calling 1300 328 308 and speaking to one of our instore florists or by selecting pick up option on our online order form.
-                                </div>
-                            </div>
-                            <div class="faq-item">
-                                <button class="faq-button">Can I place an order to collect in store? <span class="circle-arrow"><svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L5 5L9 0.999999" stroke="black"/></svg></span></button>
-                                <div class="faq-content">
-                                    Yes, this can be done by ordering in our store or calling 1300 328 308 and speaking to one of our instore florists or by selecting pick up option on our online order form.
-                                </div>
-                            </div>
-                            <div class="faq-item">
-                                <button class="faq-button">Do you offer same day delivery? <span class="circle-arrow"><svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L5 5L9 0.999999" stroke="black"/></svg></span></button>
-                                <div class="faq-content">
-                                    Yes, this can be done by ordering in our store or calling 1300 328 308 and speaking to one of our instore florists or by selecting pick up option on our online order form.
-                                </div>
-                            </div>
-                        </div>
+            <div class="container">
+                <div class="contacts-info">
+                    <a href="tel:(02) 9369 2929" class="phone">(02) 9369 2929</a>
+                    <a href="mailto:Info@rosellaflowers.com.au" class="email">Info@rosellaflowers.com.au</a>
+                    <button class="button button--white">Contact us</button>
+                </div>
+                <div class="contacts-time">
+                    <div class="time">
+                        <span class="day">Sunday</span>
+                        <span class="time">10 am–5 pm</span>
                     </div>
+                    <div class="time">
+                        <span class="day">Monday</span>
+                        <span class="time">8 am–6 pm</span>
+                    </div>
+                    <div class="time">
+                        <span class="day">Tuesday</span>
+                        <span class="time">8 am–6 pm</span>
+                    </div>
+                    <div class="time">
+                        <span class="day">Wednesday</span>
+                        <span class="time">8 am–6 pm</span>
+                    </div>
+                    <div class="time">
+                        <span class="day">Thursday</span>
+                        <span class="time">8 am–7 pm</span>
+                    </div>
+                    <div class="time">
+                        <span class="day">Friday</span>
+                        <span class="time">8 am–6 pm</span>
+                    </div>
+                    <div class="time">
+                        <span class="day">Saturday</span>
+                        <span class="time">8 am–6 pm</span>
+                    </div>
+                </div>
+                <div class="contacts-gallery">
+                    <a href="images/contact-us/1.jpg" class="image" data-fancybox rel="gallery">
+                        <img src="./assets/1-67a4b321.jpg" alt="" width="964" height="602" decoding="async" loading="lazy">
+                    </a>
+                    <a href="images/contact-us/2.jpg" class="image" data-fancybox rel="gallery">
+                        <img src="./assets/2-e40788dd.jpg" alt="" width="964" height="601" decoding="async" loading="lazy">
+                    </a>
+                    <a href="images/contact-us/3.jpg" class="image" data-fancybox rel="gallery">
+                        <img src="./assets/3-3d149547.jpg" alt="" width="964" height="602" decoding="async" loading="lazy">
+                    </a>
+                </div>
+                <div id="map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1105.2235416595574!2d151.25030385878262!3d-33.891492677536654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12adf228109467%3A0xbf7e6660c334073e!2zMywgV2VzdGZpZWxkIEJvbmRpIEp1bmN0aW9uLCA1MDAgT3hmb3JkIFN0LCBCb25kaSBKdW5jdGlvbiBOU1cgMjAyMiwg0JDQstGB0YLRgNCw0LvQuNGP!5e0!3m2!1sru!2sru!4v1714448278988!5m2!1sru!2sru" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
         </div>
     </div>
-    <footer class="footer footer--flowers">
+
+    <footer class="footer">
         <div class="footer-menu">
             <div class="container">
                 <div class="footer-columns">
