@@ -37,6 +37,10 @@ $(function () {
         $('.cart-content').removeClass('cart-open');
     })
 
+    $('.product-cards .remove').click(function () {
+        $(this).parent().remove()
+    })
+
     $(document).on('click', function (event) {
         if (!$(event.target).closest('.cart-content').length) {
             $('.cart-content').removeClass('cart-open');

@@ -128,10 +128,45 @@
     line-height: 100%
     text-align: center
 
+  .product-cards
+    font-size: 12px
+    display: grid
+    grid-gap: 8px
+    text-transform: none
+
+    .remove
+      background: transparent
+      padding: 0
+      width: 21px
+      height: 21px
+      border-radius: 50%
+      border: 1px solid transparentize($black, .9)
+      display: grid
+      place-content: center
+      cursor: pointer
+      transition: background 200ms ease-in-out, border 200ms ease-in-out
+
+      rect
+        transition: fill 200ms ease-in-out
+
+      &:hover
+        border-color: $black
+        background: $black
+
+        rect
+          fill: $white
+
+    .amount
+      font-weight: 500
+
+    .card
+      display: flex
+      gap: 15px
+
   .cart-item
     display: flex
-    align-items: center
-    padding: 10px 0
+    padding: 20px 0
+    border-top: 1px solid rgba(0, 0, 0, 0.1)
 
     img
       transition: opacity 200ms ease-in-out
@@ -144,8 +179,7 @@
     display: grid
 
   .cart-image
-    margin-right: 15px
-    overflow: hidden
+    margin-right: 20px
     @extend .border-radius-10
 
     img
@@ -190,8 +224,21 @@
       font-size: 25px
       justify-content: space-between
 
+  .product-options
+    font-size: 14px
+    line-height: 160%
+    text-transform: none
+    color: transparentize($black, .5)
+    display: grid
+    grid-gap: 2px
+    margin: 5px 0 10px 0
+
+    span
+      color: $black
+      font-weight: 500
+
   .cart-product
-    max-width: 255px
+    max-width: 300px
     font-size: 16px
     text-transform: uppercase
     line-height: 140%
@@ -275,9 +322,8 @@
     display: flex
     justify-content: space-between
     text-transform: uppercase
-    margin-bottom: 10px
+    font-size: 20px
     padding-bottom: 20px
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1)
 
     span
       opacity: .5
