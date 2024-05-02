@@ -15,8 +15,8 @@
     <script src="https://unpkg.com/imask"></script>
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"/>
-  <script type="module" crossorigin src="./assets/script-e1b64831.js"></script>
-  <link rel="stylesheet" href="./assets/script-c188d315.css">
+  <script type="module" crossorigin src="./assets/script-a4f019ae.js"></script>
+  <link rel="stylesheet" href="./assets/script-2a74b3ec.css">
 </head>
 <body class="body-contact-us">
 
@@ -184,7 +184,7 @@
                 <div class="contacts-info">
                     <a href="tel:(02) 9369 2929" class="phone">(02) 9369 2929</a>
                     <a href="mailto:Info@rosellaflowers.com.au" class="email">Info@rosellaflowers.com.au</a>
-                    <button class="button button--white">Contact us</button>
+                    <button class="button button--white" data-fancybox data-src="#contact-us">Contact us</button>
                 </div>
                 <div class="contacts-time">
                     <div class="time">
@@ -327,8 +327,25 @@
 
 
 
-<div id="contact-us" style="display: none;">
-    <div class="large-title">Contact Us</div>
-</div>
+<form action="" enctype="application/x-www-form-urlencoded" id="contact-us" class="form form-light" style="display: none;">
+    <div class="title">Contact Us</div>
+
+    <div class="description">Send us a message and we'll get back to you as quickly as possible</div>
+    <div class="row">
+        <input type="text" name="firstname" placeholder="First name *">
+    </div>
+    <div class="row">
+        <input type="text" name="lastname" placeholder="Last name *">
+    </div>
+    <div class="row">
+        <input type="email" name="email" placeholder="Email *">
+    </div>
+    <div class="row">
+        <input type="tel" name="phone" placeholder="Phone *">
+    </div>
+
+    <button type="submit" class="button button--white">Submit</button>
+
+</form>
 </body>
 </html>

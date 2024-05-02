@@ -1,6 +1,10 @@
 $(function () {
     if (typeof Fancybox !== 'undefined') {
         Fancybox.bind("[data-fancybox]", {
+            tpl: {
+                closeButton: '<button data-fancybox-close class="f-button is-close-btn" title=""><svg width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1.42188" y="0.822266" width="41.5778" height="0.848526" transform="rotate(45 1.42188 0.822266)" fill="white"/><rect x="0.820312" y="30.2222" width="41.5778" height="0.848526" transform="rotate(-45 0.820312 30.2222)" fill="white"/></svg></button>'
+            },
+            dragToClose: false,
             Images: {
                 zoom: false,
             },
