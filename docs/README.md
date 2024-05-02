@@ -7,5 +7,6 @@
 - [Service](https://iserejatoje.github.io/rosella/service.html)
 - [Cart](https://iserejatoje.github.io/rosella/cart.html)
 - [Contact Us](https://iserejatoje.github.io/rosella/contact-us.html)
+- [Product](https://iserejatoje.github.io/rosella/product.html)
 
 MADE WITH ❤️
