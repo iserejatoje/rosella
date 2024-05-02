@@ -1,0 +1,199 @@
+@import "config"
+@import "mixins"
+@import "colors"
+@import "fonts"
+
+.products-content
+  font-size: 16px
+  line-height: 160%
+  margin-top: 30px
+
+  b,
+  strong
+    font-weight: 500
+
+.product-faq
+  padding-top: 30px
+  display: flex
+  align-items: center
+  gap: 20px
+  justify-content: space-between
+  font-size: 14px
+  line-height: 140%
+
+  .item
+    display: flex
+    align-items: center
+    gap: 15px
+
+  svg
+    display: block
+
+.product-block
+  display: flex
+  margin-top: 50px
+  gap: 40px
+
+.product-info
+  flex: 1
+
+.product-gallery
+  max-width: 610px
+  width: 100%
+
+  .thumbnails
+    gap: 8px
+    display: flex
+    z-index: 5
+    pointer-events: all
+
+    img
+      @extend .border-radius-10
+
+    > a
+      @extend .border-radius-10
+
+  .block-cart
+    display: flex
+    align-items: center
+    pointer-events: all
+    gap: 20px
+
+  .price
+    font-size: 20px
+    text-transform: uppercase
+    font-weight: 500
+
+  .add-cart
+    width: 37px
+    height: 37px
+    display: grid
+    place-content: center
+    border-radius: 5px
+    border: 1px solid $black
+    cursor: pointer
+    background: transparent
+    padding: 0
+    transition: background 200ms ease-in-out
+
+    path
+      transition: fill 200ms ease-in-out, stroke 200ms ease-in-out
+
+    &:hover
+      background: $black
+
+      svg
+        path:nth-child(1),
+        path:nth-child(2)
+          stroke: $white
+
+        path:nth-child(3),
+        path:nth-child(4)
+          fill: $white
+
+  .images-bottom
+    position: absolute
+    pointer-events: none
+    left: 20px
+    bottom: 20px
+    gap: 8px
+    right: 20px
+    justify-content: space-between
+    display: flex
+    align-items: flex-end
+    z-index: 5
+
+    a
+      border-radius: 5px
+      overflow: hidden
+      border: 1px solid rgba(0, 0, 0, 0.1)
+      transition: border-color 200ms ease-in-out
+
+      &:hover
+        border: 1px solid rgba(0, 0, 0, 0.2)
+
+      &.active
+        border: 1px solid $black
+
+
+  .images
+    position: relative
+    @extend .border-radius-10
+
+    img
+      @extend .border-radius-10
+      overflow: hidden
+
+    > a
+      @extend .border-radius-10
+
+  a
+    display: block
+    @extend .border-radius-10
+
+  img
+    transition: opacity 200ms ease-in-out, transform 300ms ease-in-out
+    max-width: 100%
+    height: auto
+    display: block
+
+  .images
+    img
+      width: 100%
+
+.product-tabs
+  margin-top: 40px
+  display: flex
+  gap: 40px
+  min-height: 55px
+  border-top: 1px solid rgba(0, 0, 0, 0.1)
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1)
+
+  button
+    background: transparent
+    text-transform: uppercase
+    padding: 0
+    border: none
+    outline: none
+    cursor: pointer
+    color: transparentize($black, .5)
+
+    &.active
+      color: $black
+      position: relative
+      font-weight: 500
+
+      &:after
+        content: ''
+        position: absolute
+        left: 0
+        right: 0
+        bottom: -1px
+        z-index: 1
+        height: 1px
+        width: 100%
+        background: $black
+
+.related-block
+  margin-top: 60px
+
+  .related-grid
+    margin-top: 15px
+    display: grid
+    grid-gap: 20px
+    grid-template-columns: repeat(4, 1fr)
+
+  .related
+    overflow: hidden
+    @extend .border-radius-10
+    display: block
+
+    &:hover
+      img
+        transform: scale(1.04)
+
+    img
+      transition: transform 400ms ease-in-out
+      width: 100%
+      height: auto
+      display: block

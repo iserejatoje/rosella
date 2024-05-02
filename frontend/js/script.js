@@ -13,7 +13,7 @@ $(function () {
     }
 
     if (typeof Swiper !== 'undefined') {
-        const swiper = new Swiper('.partners-slider .swiper', {
+        new Swiper('.partners-slider .swiper', {
             maxBackfaceHiddenSlides: 5,
             autoplay: {
                 delay: 5000,
@@ -24,6 +24,20 @@ $(function () {
                 nextEl: '.partners-slider .next',
                 prevEl: '.partners-slider .prev',
             },
+        })
+        const productSwiper = new Swiper('.product-gallery .swiper', {
+            slidesPerView: 1,
+            speed: 500
+        })
+
+        productSwiper.on('slideChange', function (e) {
+            $('.thumbnails a').eq(e.realIndex).addClass('active').siblings().removeClass('active')
+        });
+
+        $('.thumbnails a').click(function (e) {
+            $(this).addClass('active').siblings().removeClass('active');
+            productSwiper.slideTo($(this).index())
+            e.preventDefault()
         })
     }
 
@@ -90,6 +104,11 @@ $(function () {
         $(this).parents('.cart-amount').find('.cart-input').get(0).value++
     })
 
+    $('.product-tabs button').click(function () {
+        $(this).addClass('active').siblings().removeClass('active')
+        $('.products-content .page').eq($(this).index()).show().siblings().hide()
+    })
+
     $('.info-item > button').click(function () {
         $(this).parents('.info-item').find('.information-block').slideToggle(400)
         $(this).parents('.info-item').toggleClass('active')
@@ -108,9 +127,9 @@ $(function () {
                 $('header').removeClass('small');
             }
             if ($(window).scrollTop() >= 10) {
-                $('.header-faq, .header-blog, .header-service, .header-cart .header, .header-contacts').addClass('header--blur');
+                $('.header-faq,.header-blog, .header-service, .header-cart .header, header.header-contacts, .header-yellow header').addClass('header--blur');
             } else {
-                $('.header-faq, .header-blog, .header-service, .header-cart .header, .header-contacts').removeClass('header--blur');
+                $('.header-faq, .header-blog, .header-service, .header-cart .header, header.header-contacts, .header-yellow header').removeClass('header--blur');
             }
         }
         init();

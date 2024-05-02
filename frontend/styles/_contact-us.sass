@@ -18,7 +18,7 @@
   padding: 60px 65px
   width: 100%
   align-items: flex-start
-  background: url(../images/contact-us/popup-background.jpg) no-repeat
+  background: $black url(../images/contact-us/popup-background.jpg) no-repeat
   display: flex
   gap: 10px
   flex-direction: column
@@ -43,7 +43,7 @@
   .description
     font-size: 14px
     opacity: .5
-    margin-bottom: 30px
+    margin-bottom: 20px
     line-height: 160%
 
   [data-fancybox-close]
@@ -67,10 +67,8 @@
   .image
     @extend .border-radius-10
     overflow: hidden
-    transition: filter 200ms ease-in-out
 
     &:hover
-      filter: brightness(1.08)
 
       img
         transform: scale(1.04)
