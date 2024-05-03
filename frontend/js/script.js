@@ -178,9 +178,9 @@ $(function () {
                 $('header').removeClass('small');
             }
             if ($(window).scrollTop() >= 10) {
-                $('.header-faq,.header-blog, .header-service, .header-cart .header, .header-contact-us, .header-yellow header').addClass('header--blur');
+                $('.header-faq,.header-blog, .header-service, .header-cart .header, .header-contact-us, .header-yellow header, .header-article header').addClass('header--blur');
             } else {
-                $('.header-faq, .header-blog, .header-service, .header-cart .header, .header-contact-us, .header-yellow header').removeClass('header--blur');
+                $('.header-faq, .header-blog, .header-service, .header-cart .header, .header-contact-us, .header-yellow header, .header-article header').removeClass('header--blur');
             }
         }
         init();

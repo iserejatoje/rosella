@@ -8,5 +8,6 @@
 - [Cart](https://iserejatoje.github.io/rosella/cart.html)
 - [Contact Us](https://iserejatoje.github.io/rosella/contact-us.html)
 - [Product](https://iserejatoje.github.io/rosella/product.html)
+- [Article](https://iserejatoje.github.io/rosella/article.html)
 
 MADE WITH ❤️
