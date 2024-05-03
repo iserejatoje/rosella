@@ -10,9 +10,32 @@ $(function () {
             },
             hideScrollbar: false,
         });
+
+        $('.button-add').click(function (e) {
+            Fancybox.close(true)
+        })
     }
 
+    function getExtraPrices() {
+        let extraPrices = '';
+        $('.extra-grid input:checked').each(function () {
+            extraPrices += '<div class="extra"><span>+$'+$(this).attr('data-price')+'</span> '+$(this).val()+'</div>'
+        })
+        $('.extra-amount').html(extraPrices)
+    }
+
+    getExtraPrices();
+
+    $('.extra-grid input').change(function () {
+        getExtraPrices()
+    })
+
     if (typeof Swiper !== 'undefined') {
+        new Swiper('.gift-categories', {
+            slidesPerView: 'auto',
+            freeMode: true,
+            speed: 500,
+        })
         new Swiper('.partners-slider .swiper', {
             maxBackfaceHiddenSlides: 5,
             autoplay: {
@@ -39,6 +62,12 @@ $(function () {
             productSwiper.slideTo($(this).index())
             e.preventDefault()
         })
+
+        $('.gift-categories a').click(function (e) {
+            $(this).addClass('active').parent().siblings().find('a').removeClass('active');
+            $('.gifts-pages .page').eq($(this).parent().index()).show().siblings().hide()
+            e.preventDefault()
+        })
     }
 
     if (typeof IMask !== 'undefined') {
@@ -47,6 +76,19 @@ $(function () {
             mask: '{61} (00) 0000 0000'
         }))
     }
+
+    $('form').submit(function (e) {
+        $.ajax({
+            url: $(this).attr('action'),
+            type: 'POST',
+            data: $(this).serialize(),
+            dataType: 'json',
+            success: function (data) {
+                console.log(data);
+            }
+        })
+        e.preventDefault();
+    })
 
     $('.cart-icon').click(function () {
         $(this).next().toggleClass('cart-open');

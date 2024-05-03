@@ -313,9 +313,9 @@
                             </div>
                             <div class="variant">
                                 <div class="label-large">Add a little extra something</div>
-                                <div class="extra-grid">
+                                <div class="extra-grid extra-grid-4">
                                     <label>
-                                        <input type="checkbox" name="extra" value="Urban Rituelle">
+                                        <input type="checkbox" name="extra" value="Urban Rituelle" data-price="15" checked>
                                         <span class="image">
                                             <img src="images/extra/1.jpg" alt="">
                                             <span class="checker"></span>
@@ -324,7 +324,7 @@
                                         <span class="title">Urban Rituelle</span>
                                     </label>
                                     <label>
-                                        <input type="checkbox" name="extra" value="Urban Rituelle Velvet Rose">
+                                        <input type="checkbox" name="extra" value="Urban Rituelle Velvet Rose" data-price="10" checked>
                                         <span class="image">
                                             <img src="images/extra/2.jpg" alt="">
                                             <span class="checker"></span>
@@ -333,7 +333,7 @@
                                         <span class="title">Urban Rituelle Velvet Rose</span>
                                     </label>
                                     <label>
-                                        <input type="checkbox" name="extra" value="Urban Rituelle">
+                                        <input type="checkbox" name="extra" value="Urban Rituelle" data-price="10">
                                         <span class="image">
                                             <img src="images/extra/3.jpg" alt="">
                                             <span class="checker"></span>
@@ -354,6 +354,14 @@
                                 </div>
                             </div>
                         </div>
+
+                        <button type="submit" class="button button--cart-order">
+                            <span class="label">BUY</span>
+                            <span class="amount">$45.00</span>
+                            <span class="all-sum">all sum</span>
+                        </button>
+
+                        <div class="extra-amount"></div>
                     </div>
                 </div>
 
@@ -400,6 +408,7 @@
                         </a>
                     </div>
                 </div>
+
             </div>
         </div>
     </div>
@@ -498,8 +507,297 @@
 <script type="module" src="./main.js"></script>
 <script type="module" src="./js/script.js"></script>
 
-<div id="gifts" style="display: none;">
-    <div class="title">ADD A LITTLE EXTRA SOMETHING</div>
-</div>
+<form action="" method="post" enctype="application/x-www-form-urlencoded" id="gifts" style="display: none;">
+    <div class="title">Add a little extra something</div>
+
+    <div class="gift-slider-block">
+        <div class="gift-categories swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <a href="#" class="active">Candles <span>(7)</span></a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="#">Champagne, wine or spirits <span>(3)</span></a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="#">New baby gifts <span>(3)</span></a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="#">Plant extras <span>(3)</span></a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="#">Champagne, wine or spirits <span>(3)</span></a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="#">New baby gifts <span>(3)</span></a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="#">Plant extras <span>(3)</span></a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="gifts-pages">
+            <div class="page">
+                <div class="extra-grid extra-grid-7">
+                    <label>
+                        <input type="checkbox" name="extra" value="Urban Rituelle" data-price="15">
+                        <span class="image">
+                            <img src="images/extra/1.jpg" alt="">
+                            <span class="checker"></span>
+                        </span>
+                        <span class="price">+$15.00</span>
+                        <span class="title">Urban Rituelle</span>
+                    </label>
+                    <label>
+                        <input type="checkbox" name="extra" value="Urban Rituelle Velvet Rose" data-price="15">
+                        <span class="image">
+                    <img src="images/extra/2.jpg" alt="">
+                    <span class="checker"></span>
+                </span>
+                        <span class="price">+$10.00</span>
+                        <span class="title">Urban Rituelle Velvet Rose</span>
+                    </label>
+                    <label>
+                        <input type="checkbox" name="extra" value="Urban Rituelle" data-price="15">
+                        <span class="image">
+                    <img src="images/extra/3.jpg" alt="">
+                    <span class="checker"></span>
+                </span>
+                        <span class="price">+$10.00</span>
+                        <span class="title">Urban Rituelle Velvet Rose Garden Candle</span>
+                    </label>
+                    <label>
+                        <input type="checkbox" name="extra" value="Urban Rituelle" data-price="15">
+                        <span class="image">
+                    <img src="images/extra/1.jpg" alt="">
+                    <span class="checker"></span>
+                </span>
+                        <span class="price">+$15.00</span>
+                        <span class="title">Urban Rituelle</span>
+                    </label>
+                    <label>
+                        <input type="checkbox" name="extra" value="Urban Rituelle Velvet Rose" data-price="15">
+                        <span class="image">
+                    <img src="images/extra/2.jpg" alt="">
+                    <span class="checker"></span>
+                </span>
+                        <span class="price">+$10.00</span>
+                        <span class="title">Urban Rituelle Velvet Rose</span>
+                    </label>
+                    <label>
+                        <input type="checkbox" name="extra" value="Urban Rituelle" data-price="15">
+                        <span class="image">
+                    <img src="images/extra/3.jpg" alt="">
+                    <span class="checker"></span>
+                </span>
+                        <span class="price">+$10.00</span>
+                        <span class="title">Urban Rituelle Velvet Rose Garden Candle</span>
+                    </label>
+                    <label>
+                        <input type="checkbox" name="extra" value="Urban Rituelle" data-price="15">
+                        <span class="image">
+                    <img src="images/extra/1.jpg" alt="">
+                    <span class="checker"></span>
+                </span>
+                        <span class="price">+$15.00</span>
+                        <span class="title">Urban Rituelle</span>
+                    </label>
+                </div>
+            </div>
+            <div class="page" style="display: none;">
+                <div class="extra-grid extra-grid-7">
+                    <label>
+                        <input type="checkbox" name="extra" value="Urban Rituelle" data-price="15">
+                        <span class="image">
+                    <img src="images/extra/1.jpg" alt="">
+                    <span class="checker"></span>
+                </span>
+                        <span class="price">+$15.00</span>
+                        <span class="title">Urban Rituelle</span>
+                    </label>
+                    <label>
+                        <input type="checkbox" name="extra" value="Urban Rituelle" data-price="15">
+                        <span class="image">
+                    <img src="images/extra/2.jpg" alt="">
+                    <span class="checker"></span>
+                </span>
+                        <span class="price">+$10.00</span>
+                        <span class="title">Urban Rituelle Velvet Rose</span>
+                    </label>
+                    <label>
+                        <input type="checkbox" name="extra" value="Urban Rituelle" data-price="15">
+                        <span class="image">
+                    <img src="images/extra/3.jpg" alt="">
+                    <span class="checker"></span>
+                </span>
+                        <span class="price">+$10.00</span>
+                        <span class="title">Urban Rituelle Velvet Rose Garden Candle</span>
+                    </label>
+                </div>
+            </div>
+            <div class="page" style="display: none;">
+                <div class="extra-grid extra-grid-7">
+                    <label>
+                        <input type="checkbox" name="extra" value="Urban Rituelle" data-price="15">
+                        <span class="image">
+                    <img src="images/extra/1.jpg" alt="">
+                    <span class="checker"></span>
+                </span>
+                        <span class="price">+$15.00</span>
+                        <span class="title">Urban Rituelle</span>
+                    </label>
+                    <label>
+                        <input type="checkbox" name="extra" value="Urban Rituelle" data-price="15">
+                        <span class="image">
+                    <img src="images/extra/2.jpg" alt="">
+                    <span class="checker"></span>
+                </span>
+                        <span class="price">+$10.00</span>
+                        <span class="title">Urban Rituelle Velvet Rose</span>
+                    </label>
+                    <label>
+                        <input type="checkbox" name="extra" value="Urban Rituelle" data-price="15">
+                        <span class="image">
+                    <img src="images/extra/3.jpg" alt="">
+                    <span class="checker"></span>
+                </span>
+                        <span class="price">+$10.00</span>
+                        <span class="title">Urban Rituelle Velvet Rose Garden Candle</span>
+                    </label>
+                </div>
+            </div>
+            <div class="page" style="display: none;">
+                <div class="extra-grid extra-grid-7">
+                    <label>
+                        <input type="checkbox" name="extra" value="Urban Rituelle" data-price="15">
+                        <span class="image">
+                    <img src="images/extra/1.jpg" alt="">
+                    <span class="checker"></span>
+                </span>
+                        <span class="price">+$15.00</span>
+                        <span class="title">Urban Rituelle</span>
+                    </label>
+                    <label>
+                        <input type="checkbox" name="extra" value="Urban Rituelle Velvet Rose" data-price="15">
+                        <span class="image">
+                    <img src="images/extra/2.jpg" alt="">
+                    <span class="checker"></span>
+                </span>
+                        <span class="price">+$10.00</span>
+                        <span class="title">Urban Rituelle Velvet Rose</span>
+                    </label>
+                    <label>
+                        <input type="checkbox" name="extra" value="Urban Rituelle" data-price="15">
+                        <span class="image">
+                    <img src="images/extra/3.jpg" alt="">
+                    <span class="checker"></span>
+                </span>
+                        <span class="price">+$10.00</span>
+                        <span class="title">Urban Rituelle Velvet Rose Garden Candle</span>
+                    </label>
+                </div>
+            </div>
+            <div class="page" style="display: none;">
+                <div class="extra-grid extra-grid-7">
+                    <label>
+                        <input type="checkbox" name="extra" value="Urban Rituelle" data-price="15">
+                        <span class="image">
+                    <img src="images/extra/1.jpg" alt="">
+                    <span class="checker"></span>
+                </span>
+                        <span class="price">+$15.00</span>
+                        <span class="title">Urban Rituelle</span>
+                    </label>
+                    <label>
+                        <input type="checkbox" name="extra" value="Urban Rituelle" data-price="15">
+                        <span class="image">
+                    <img src="images/extra/2.jpg" alt="">
+                    <span class="checker"></span>
+                </span>
+                        <span class="price">+$10.00</span>
+                        <span class="title">Urban Rituelle Velvet Rose</span>
+                    </label>
+                    <label>
+                        <input type="checkbox" name="extra" value="Urban Rituelle" data-price="15">
+                        <span class="image">
+                    <img src="images/extra/3.jpg" alt="">
+                    <span class="checker"></span>
+                </span>
+                        <span class="price">+$10.00</span>
+                        <span class="title">Urban Rituelle Velvet Rose Garden Candle</span>
+                    </label>
+                </div>
+            </div>
+            <div class="page" style="display: none;">
+                <div class="extra-grid extra-grid-7">
+                    <label>
+                        <input type="checkbox" name="extra" value="Urban Rituelle" data-price="15">
+                        <span class="image">
+                    <img src="images/extra/1.jpg" alt="">
+                    <span class="checker"></span>
+                </span>
+                        <span class="price">+$15.00</span>
+                        <span class="title">Urban Rituelle</span>
+                    </label>
+                    <label>
+                        <input type="checkbox" name="extra" value="Urban Rituelle" data-price="15">
+                        <span class="image">
+                    <img src="images/extra/2.jpg" alt="">
+                    <span class="checker"></span>
+                </span>
+                        <span class="price">+$10.00</span>
+                        <span class="title">Urban Rituelle Velvet Rose</span>
+                    </label>
+                    <label>
+                        <input type="checkbox" name="extra" value="Urban Rituelle" data-price="15">
+                        <span class="image">
+                    <img src="images/extra/3.jpg" alt="">
+                    <span class="checker"></span>
+                </span>
+                        <span class="price">+$10.00</span>
+                        <span class="title">Urban Rituelle Velvet Rose Garden Candle</span>
+                    </label>
+                </div>
+            </div>
+            <div class="page" style="display: none;">
+                <div class="extra-grid extra-grid-7">
+                    <label>
+                        <input type="checkbox" name="extra" value="Urban Rituelle" data-price="15">
+                        <span class="image">
+                    <img src="images/extra/1.jpg" alt="">
+                    <span class="checker"></span>
+                </span>
+                        <span class="price">+$15.00</span>
+                        <span class="title">Urban Rituelle</span>
+                    </label>
+                    <label>
+                        <input type="checkbox" name="extra" value="Urban Rituelle" data-price="15">
+                        <span class="image">
+                    <img src="images/extra/2.jpg" alt="">
+                    <span class="checker"></span>
+                </span>
+                        <span class="price">+$10.00</span>
+                        <span class="title">Urban Rituelle Velvet Rose</span>
+                    </label>
+                    <label>
+                        <input type="checkbox" name="extra" value="Urban Rituelle" data-price="15">
+                        <span class="image">
+                    <img src="images/extra/3.jpg" alt="">
+                    <span class="checker"></span>
+                </span>
+                        <span class="price">+$10.00</span>
+                        <span class="title">Urban Rituelle Velvet Rose Garden Candle</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-add">
+        <button type="submit" class="button button--clear button-add">Add</button>
+    </div>
+</form>
 </body>
 </html>

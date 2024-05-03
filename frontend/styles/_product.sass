@@ -311,10 +311,16 @@
 
 .extra-grid
   display: grid
-  max-width: 472px
-  grid-template-columns: repeat(4, 1fr)
-  gap: 20px
-  align-items: flex-start
+
+  &-4
+    max-width: 472px
+    grid-template-columns: repeat(4, 1fr)
+    gap: 20px
+    align-items: flex-start
+  &-7
+    grid-template-columns: repeat(7, 1fr)
+    gap: 20px
+    align-items: flex-start
 
   .price
     font-size: 14px
@@ -337,6 +343,7 @@
   img
     max-width: 100%
     height: auto
+    display: block
     @extend .border-radius-10
 
   .checker
@@ -380,11 +387,17 @@
   color: $black
   padding: 60px 65px
   width: 100%
-  align-items: flex-start
+  display: block
   background: $white
-  display: flex
-  gap: 10px
-  flex-direction: column
+
+  label
+    cursor: pointer
+
+    input
+      position: absolute
+      opacity: 0
+      width: 10px
+      height: 10px
 
   [data-fancybox-close]
     right: 20px
@@ -406,8 +419,70 @@
     rect
       fill: $black
 
-  .title
+  > .title
     font-size: 40px
     text-transform: uppercase
     line-height: 120%
     font-weight: 500
+    margin-bottom: 30px
+
+.gift-slider-block
+  overflow: hidden
+
+.form-add
+  margin-top: 20px
+
+.gifts-pages
+  label
+    img
+      transition: opacity 200ms ease-in-out
+    &:hover
+      img
+        opacity: .88
+
+.gift-categories
+  border-bottom: 1px solid rgba(0, 0, 0, .1)
+  position: relative
+  padding-right: 60px
+  margin-bottom: 30px
+  overflow: visible
+
+  &:after
+    z-index: 1
+    content: ''
+    position: absolute
+    pointer-events: none
+    width: 100px
+    height: 100%
+    bottom: 0
+    top: 0
+    right: 0
+    background: linear-gradient(270deg, #fff 15%, #ffffff00)
+
+  .swiper-slide
+    margin-right: 30px
+    width: auto
+
+  a
+    text-decoration: none
+    color: $black
+    padding-bottom: 10px
+    display: inline-block
+    line-height: 160%
+
+    span
+      font-weight: 400
+      color: transparentize($black, .5)
+
+    &.active
+      font-weight: 500
+      line-height: 140%
+
+      &:after
+        content: ''
+        position: absolute
+        bottom: -3px
+        left: 0
+        right: 0
+        background: $black
+        height: 1px
