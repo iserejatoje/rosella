@@ -52,6 +52,10 @@ html
     transition: color 200ms ease-in-out
     border-radius: 90px
 
+    span
+      position: relative
+      z-index: 2
+
     &:before
       border-radius: 90px
       content: ''
@@ -59,7 +63,6 @@ html
       background: $white
       left: 0
       right: 0
-      z-index: -1
       top: 0
       transition: background 200ms ease-in-out, color 200ms ease-in-out, transform 200ms ease-in-out
       bottom: 0
