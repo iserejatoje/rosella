@@ -17,6 +17,7 @@ export default defineConfig({
                 cart: resolve(__dirname, 'cart.html'),
                 contact_us: resolve(__dirname, 'contact-us.html'),
                 product: resolve(__dirname, 'product.html'),
+                article: resolve(__dirname, 'article.html'),
             },
         },
         css: {
