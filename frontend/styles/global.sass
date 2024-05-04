@@ -11,15 +11,15 @@
 @import "product"
 @import "cart"
 
-.header-yellow
-  background: url(../images/yellow.jpg) fixed no-repeat top center
+.yellow-flowers
+  background: url(../images/yellow.jpg) fixed no-repeat top center / contain
 
   h1
     padding-bottom: 24px
-    margin-top: 10px
+    margin-top: 12px
     margin-bottom: 0
 
-.header-base
+.rose-flowers
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../images/flowers/header.jpg) fixed
 
   h1
@@ -155,26 +155,41 @@ html
     border-radius: 90px
     height: 49px
     margin-top: 25px
-    border: 1px solid $black
+    position: relative
     text-transform: uppercase
     font-size: 16px
     font-weight: 500
     width: 100%
+    border: none
     display: flex
+    background: transparent
     align-items: center
     text-decoration: none
     color: $white
-    background: $black
     transition: background 200ms ease-in-out, color 200ms ease-in-out
+
+    &:hover
+      &:before
+        transform: scale(1.04)
+
+    &:before
+      border-radius: 90px
+      position: absolute
+      transition: transform 200ms ease-in-out
+      content: ''
+      left: 0
+      z-index: -1
+      top: 0
+      right: 0
+      bottom: 0
+      background: $black
+
 
     svg
       transition: transform 200ms ease-in-out
 
     &:hover
       background: lighten($black, 12%)
-
-      svg
-        transform: translateX(6px)
 
     .subtotal-amount
       margin-left: auto
@@ -220,6 +235,12 @@ body
   display: inline-flex
   flex-wrap: wrap
 
+  &--dark
+    color: $black
+
+    a
+      color: $black
+
   &--long
     margin-top: 45px
 
@@ -242,35 +263,62 @@ body
     &:hover
       opacity: 1
 
+body
+  &.menu-opened
+    .burger
+      .open
+        display: none
+
+      .close
+        display: grid
+        place-content: center
+
+  &:not(.menu-opened)
+    .close
+      display: none
+
 .burger
   background: transparent
   border: none
   display: flex
   flex-shrink: 0
-  flex-direction: column
-  width: 45px
-  gap: 8px
-  padding: 10px
   cursor: pointer
+  padding: 0
+
+  .close
+    width: 45px
+    height: 39px
+    display: none
 
   &:hover
-    span:first-child
+    .open span:first-child
       max-width: 15px
 
-    span:last-child
+    .open span:last-child
       max-width: 100%
 
-  span
-    display: inline-block
-    height: 1px
-    max-width: 100%
-    width: 100%
-    background: $white
-    transition: max-width $time ease-in-out
+  .open
+    background: transparent
+    border: none
+    display: flex
     flex-shrink: 0
+    flex-direction: column
+    width: 45px
+    gap: 8px
+    padding: 10px
+    cursor: pointer
 
-    &:last-child
-      max-width: 10px
+    span
+      display: inline-block
+      height: 1px
+      max-width: 100%
+      width: 100%
+      background: $white
+      transition: max-width $time ease-in-out
+      flex-shrink: 0
+
+      &:last-child
+        max-width: 10px
 
 .logo
   display: inline-block
@@ -292,7 +340,7 @@ blockquote
   padding: 0
 
 .header
-  transition: min-height 300ms ease-in-out, background 300ms ease-in-out, backdrop-filter 300ms ease-in-out
+  transition: min-height 300ms ease-in-out, backdrop-filter 300ms ease-in-out
 
   &--blur
     background: rgba(0, 0, 0, 0.3)
@@ -464,7 +512,7 @@ blockquote
   flex-wrap: wrap
   justify-content: space-between
 
-.header-top
+.main-section
   padding-top: 100px
   color: $white
 
@@ -472,10 +520,10 @@ blockquote
   min-height: $min-header-height
   padding-left: 50px
   padding-right: 50px
-  justify-content: center
   display: flex
   gap: 70px
   align-items: center
+  justify-content: space-between
 
   &.small
     min-height: 80px
@@ -550,8 +598,8 @@ blockquote
     left: 0
     z-index: 100
 
-    & + .rosella-page
-      padding-top: 100px
+    //& + .rosella-page
+    //  padding-top: 100px
 
 .container
   max-width: $container-width
@@ -680,7 +728,7 @@ blockquote
 
   .footer-columns
     display: flex
-    gap: 55px
+    gap: 60px
 
     a
       color: inherit
@@ -809,3 +857,65 @@ blockquote
 
   span
     color: $black
+
+body.menu-opened
+  padding-right: var(--scroll-bar-width)
+  overflow: hidden
+
+  .header--swimming
+    right: var(--scroll-bar-width)
+
+  .menu
+    opacity: 1
+    visibility: visible
+    transition: opacity 250ms ease-in-out, visibility 250ms ease-in-out, transform 250ms ease-in-out
+
+.menu
+  padding-top: 120px
+  transform-origin: bottom center
+  opacity: 0
+  visibility: hidden
+  position: fixed
+  left: 0
+  right: 0
+  top: 0
+  z-index: 90
+  bottom: 0
+  background: $black
+  background: url(../images/menu.jpg) no-repeat bottom center
+  min-height: 690px
+  display: flex
+  align-items: center
+
+  .container
+    height: 100%
+
+  .menu-inner
+    height: 100%
+    display: flex
+    align-items: center
+    padding-bottom: 20px
+
+    .column
+      height: 100%
+
+      &:first-child
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+        grid-gap: 50px
+        max-height: 690px
+        align-items: flex-start
+
+        a
+          text-decoration: none
+          font-size: 50px
+          line-height: 120%
+          text-transform: uppercase
+          transition: opacity 200ms ease-in-out
+
+          &:hover
+            opacity: .7
+
+  a
+    color: $white
