@@ -18,6 +18,18 @@ export default defineConfig({
                 contact_us: resolve(__dirname, 'contact-us.html'),
                 product: resolve(__dirname, 'product.html'),
                 article: resolve(__dirname, 'article.html'),
+                shop: resolve(__dirname, 'shop.html'),
+            },
+            output: {
+                assetFileNames: (assetInfo) => {
+                    let extType = assetInfo.name.split('.').at(1);
+                    if (/png|jpe?g|svg|gif|tiff|bmp|ico/i.test(extType)) {
+                        extType = 'img';
+                    }
+                    return `assets/${extType}/[name][extname]`;
+                },
+                chunkFileNames: 'assets/js/[name].js',
+                entryFileNames: 'assets/js/[name].js',
             },
         },
         css: {

@@ -1,0 +1,44 @@
+body.page-template-contacts-page {
+    background: #000 url(../img/contact-us/header.jpg) no-repeat top right
+}
+
+body.page-template-contacts-page h1 {
+    font-size: 50px;
+    max-width: 815px;
+    text-transform: none;
+    margin-top: 80px;
+}
+
+.content-navigation .title {
+    line-height: 160%;
+}
+
+.content-navigation .next {
+    text-align: right;
+}
+
+.content-navigation .prev,
+.content-navigation .next {
+    max-width: 350px;
+}
+
+.gallery-wrapper .row:nth-child(even) a:last-child {
+    flex: 1;
+}
+
+.gallery-wrapper .row:nth-child(odd) a:first-child {
+    flex: 1;
+}
+
+.service-title {
+    color: #000;
+    text-decoration: none;
+}
+
+.faq p:first-child {
+    margin-top: 0 !important;
+}
+
+.faq p:last-child {
+    margin-bottom: 0 !important;
+}

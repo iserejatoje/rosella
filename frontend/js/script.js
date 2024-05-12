@@ -1,7 +1,11 @@
 $(function () {
 
+    if ($('select').length > 0) {
+        $('select').niceSelect();
+    }
+
     const getScrollbarWidth = () =>
-        window.innerWidth - document.documentElement.clientWidth;
+    window.innerWidth - document.documentElement.clientWidth;
     $('body').attr('style', '--scroll-bar-width: ' + getScrollbarWidth() + 'px');
 
     if (typeof Fancybox !== 'undefined') {
@@ -81,19 +85,6 @@ $(function () {
             mask: '{61} (00) 0000 0000'
         }))
     }
-
-    $('form').submit(function (e) {
-        $.ajax({
-            url: $(this).attr('action'),
-            type: 'POST',
-            data: $(this).serialize(),
-            dataType: 'json',
-            success: function (data) {
-                console.log(data);
-            }
-        })
-        e.preventDefault();
-    })
 
     $('.cart-icon').click(function () {
         $(this).next().toggleClass('cart-open');

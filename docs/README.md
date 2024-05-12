@@ -9,5 +9,6 @@
 - [Contact Us](https://iserejatoje.github.io/rosella/contact-us.html)
 - [Product](https://iserejatoje.github.io/rosella/product.html)
 - [Article](https://iserejatoje.github.io/rosella/article.html)
+- [Shop](https://iserejatoje.github.io/rosella/shop.html)
 
 MADE WITH ❤️
